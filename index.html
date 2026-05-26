@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nextblock Labs — Custom AI Builds for Your Business</title>
+<title>Nextblock Labs</title>
 <meta name="description" content="Custom AI systems built around your business — not a generic tool. Project-based, fixed-scope, no retainers. From £1,500.">
 
 <!-- Open Graph -->
@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://nextblocklabs.com">
 <meta name="twitter:card" content="summary">
 
-<!-- Favicon — inlined so no external file needed -->
+<!-- Favicon — inlined, no external file needed -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='2' width='16' height='16' rx='2' fill='%230c7878'/%3E%3Crect x='21.75' y='2' width='16' height='16' rx='2' fill='%234ec3b9'/%3E%3Crect x='2' y='22' width='16' height='16' rx='2' fill='%230c7878'/%3E%3Crect x='21.75' y='22' width='16' height='16' rx='2' fill='%230c7878'/%3E%3C/svg%3E">
 
 <style>
@@ -27,7 +27,7 @@
   .site-header { padding: 1.5rem 0; border-bottom: 1px solid #f0f0f0; }
   .site-header .container { display: flex; align-items: center; justify-content: space-between; }
   .logo-link { display: inline-flex; align-items: center; text-decoration: none; }
-  .header-cta { font-size: 13px; font-weight: 500; color: #0c7878; text-decoration: none; padding: 0.5rem 0.9rem; border: 1px solid #0c7878; border-radius: 6px; transition: background 0.15s ease; white-space: nowrap; }
+  .header-cta { font-size: 13px; font-weight: 500; color: #0c7878; text-decoration: none; padding: 0.5rem 0.9rem; border: 1px solid #0c7878; border-radius: 6px; background: #ffffff; transition: background 0.15s ease; white-space: nowrap; }
   .header-cta:hover { background: #e1f5ee; }
 
   /* Page wrapper */
@@ -35,7 +35,7 @@
 
   /* Hero */
   .hero { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid #e5e5e5; }
-  .hero-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0c7878; background: #e1f5ee; padding: 4px 10px; border-radius: 4px; margin-bottom: 1rem; }
+  .hero-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0c7878; background: #e1f5ee; padding: 4px 10px; border-radius: 20px; margin-bottom: 1rem; }
   .hero h1 { font-size: 32px; font-weight: 500; color: #1a1a1a; line-height: 1.25; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
   .hero p { font-size: 16px; color: #555; line-height: 1.7; max-width: 620px; }
 
@@ -46,9 +46,9 @@
   .bullet-list { display: flex; flex-direction: column; gap: 0.7rem; }
   .bullet-item { display: flex; gap: 0.75rem; font-size: 14px; color: #1a1a1a; line-height: 1.55; }
   .bullet-dot { flex-shrink: 0; width: 5px; height: 5px; border-radius: 50%; background: #0c7878; margin-top: 7px; opacity: 0.7; }
-  .proof-text { font-size: 14px; color: #1a1a1a; line-height: 1.55; padding-left: calc(5px + 0.75rem); }
+  .proof-text { font-size: 14px; color: #1a1a1a; line-height: 1.55; }
   .proof-text strong { font-weight: 600; }
-  .proof-sub { font-size: 12.5px; color: #666; margin-top: 0.85rem; line-height: 1.55; padding-top: 0.85rem; padding-left: calc(5px + 0.75rem); border-top: 1px solid #e5e5e5; }
+  .proof-sub { font-size: 12.5px; color: #666; font-style: italic; margin-top: 0.85rem; line-height: 1.55; padding-top: 0.85rem; border-top: 1px solid #e5e5e5; }
 
   /* Steps */
   .steps-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #f9f9f7; border: 1px solid #e5e5e5; border-radius: 10px; overflow: hidden; margin-bottom: 1.5rem; }
@@ -68,7 +68,7 @@
   .bottom-cell:last-child .bottom-main { color: #ffffff; }
   .bottom-sub { font-size: 12.5px; color: #666; line-height: 1.55; }
   .bottom-cell:last-child .bottom-sub { color: #d0ebe3; }
-  .bottom-cta { display: inline-block; margin-top: 0.85rem; padding: 0.6rem 1rem; background: #ffffff; color: #0c7878; font-size: 13px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: opacity 0.15s ease; }
+  .bottom-cta { display: inline-block; margin-top: 0.85rem; padding: 0.6rem 1rem; background: #ffffff; color: #0c7878; font-size: 13px; font-weight: 600; text-decoration: none; border-radius: 6px; border: 1px solid #0c7878; transition: opacity 0.15s ease; }
   .bottom-cta:hover { opacity: 0.92; }
 
   /* Footer */
@@ -152,7 +152,7 @@
       </div>
       <div class="card">
         <div class="card-label">Proof it works</div>
-        <div class="proof-text"><strong>Traders Newsbox</strong> — a live AI product I built and run on my own. It watches 100+ news sources, decides which stories matter to which trader, and posts in under 5 seconds. Runs 24/7 without me touching it. One person built and runs a serious AI product because the system does the work. Same approach, built for your business.</div>
+        <div class="proof-text"><strong>Traders Newsbox</strong> — a live AI system that watches 100+ news sources, decides which stories matter to which trader, and posts in under 1 second. Runs 24/7 unattended. Same approach, built for your business.</div>
         <div class="proof-sub">Built solo. Run solo. No dev team, no agency. Just the system, quietly doing the job.</div>
       </div>
     </section>
@@ -200,7 +200,8 @@
 <footer class="footer">
   <div class="container">
     <span class="footer-brand">Nextblock Labs</span>
-    <span class="footer-line"><a href="https://linkedin.com/in/shaziqbal">Shaz Iqbal</a> &nbsp;·&nbsp; <a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a></span>
+    <span class="footer-line">Shaz Iqbal &nbsp;·&nbsp; <a href="https://linkedin.com/in/shaziqbal">LinkedIn</a></span>
+    <span class="footer-line"><a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a></span>
   </div>
 </footer>
 
