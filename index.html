@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nextblock Labs — Custom AI Builds for Your Business</title>
+<meta name="description" content="Custom AI systems built around your business — not a generic tool. Project-based, fixed-scope, no retainers. From £1,500.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nextblock Labs — Custom AI Builds">
+<meta property="og:description" content="Stop your team doing work a computer should be doing. Custom AI built around how your business actually runs. From £1,500.">
+<meta property="og:url" content="https://nextblocklabs.com">
+<meta name="twitter:card" content="summary">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/assets/logo_icon.svg">
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #ffffff; color: #1a1a1a; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+  .container { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Header */
+  .site-header { padding: 1.5rem 0; border-bottom: 1px solid #f0f0f0; }
+  .site-header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo-link { display: inline-flex; align-items: center; text-decoration: none; }
+  .logo-link img { height: 32px; width: auto; display: block; }
+  .header-cta { font-size: 13px; font-weight: 500; color: #0c7878; text-decoration: none; padding: 0.5rem 0.9rem; border: 1px solid #0c7878; border-radius: 6px; transition: background 0.15s ease; }
+  .header-cta:hover { background: #e1f5ee; }
+
+  /* Page wrapper */
+  .page { padding: 2.5rem 0 3.5rem; }
+
+  /* Hero */
+  .hero { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid #e5e5e5; }
+  .hero-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0c7878; background: #e1f5ee; padding: 4px 10px; border-radius: 4px; margin-bottom: 1rem; }
+  .hero h1 { font-size: 32px; font-weight: 500; color: #1a1a1a; line-height: 1.25; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
+  .hero p { font-size: 16px; color: #555; line-height: 1.7; max-width: 620px; }
+
+  /* Two-column cards */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+  .card { background: #ffffff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 1.75rem; }
+  .card-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #0c7878; margin-bottom: 1rem; }
+  .bullet-list { display: flex; flex-direction: column; gap: 0.7rem; }
+  .bullet-item { display: flex; gap: 0.75rem; font-size: 14px; color: #1a1a1a; line-height: 1.55; }
+  .bullet-dot { flex-shrink: 0; width: 5px; height: 5px; border-radius: 50%; background: #0c7878; margin-top: 7px; opacity: 0.7; }
+  .proof-text { font-size: 14px; color: #1a1a1a; line-height: 1.55; padding-left: calc(5px + 0.75rem); }
+  .proof-text strong { font-weight: 600; }
+  .proof-sub { font-size: 12.5px; color: #666; margin-top: 0.85rem; line-height: 1.55; padding-top: 0.85rem; padding-left: calc(5px + 0.75rem); border-top: 1px solid #e5e5e5; }
+
+  /* Steps */
+  .steps-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #f9f9f7; border: 1px solid #e5e5e5; border-radius: 10px; overflow: hidden; margin-bottom: 1.5rem; }
+  .step { padding: 1.2rem 1.3rem; border-right: 1px solid #e5e5e5; min-width: 0; }
+  .step:last-child { border-right: none; }
+  .step-num { font-size: 10px; font-weight: 600; color: #0c7878; letter-spacing: 0.08em; margin-bottom: 0.35rem; opacity: 0.8; }
+  .step-title { font-size: 13px; font-weight: 600; color: #1a1a1a; margin-bottom: 0.35rem; white-space: nowrap; }
+  .step-desc { font-size: 12px; color: #666; line-height: 1.5; }
+
+  /* Bottom row */
+  .bottom { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #e5e5e5; border-radius: 10px; overflow: hidden; margin-bottom: 2.5rem; }
+  .bottom-cell { background: #ffffff; padding: 1.4rem 1.6rem; border-right: 1px solid #e5e5e5; }
+  .bottom-cell:last-child { border-right: none; background: #0c7878; color: #ffffff; }
+  .bottom-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 0.4rem; }
+  .bottom-cell:last-child .bottom-label { color: #b6e0d6; }
+  .bottom-main { font-size: 21px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.3rem; }
+  .bottom-cell:last-child .bottom-main { color: #ffffff; }
+  .bottom-sub { font-size: 12.5px; color: #666; line-height: 1.55; }
+  .bottom-cell:last-child .bottom-sub { color: #d0ebe3; }
+  .bottom-cta { display: inline-block; margin-top: 0.85rem; padding: 0.6rem 1rem; background: #ffffff; color: #0c7878; font-size: 13px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: opacity 0.15s ease; }
+  .bottom-cta:hover { opacity: 0.92; }
+
+  /* Footer */
+  .footer { padding: 2rem 0 2.5rem; border-top: 1px solid #f0f0f0; text-align: center; }
+  .footer-brand { display: block; font-size: 14px; font-weight: 600; color: #1a1a1a; margin-bottom: 0.35rem; }
+  .footer-line { display: block; font-size: 12px; color: #888; margin-bottom: 0.25rem; }
+  .footer-line a { color: #0c7878; text-decoration: none; }
+  .footer-line a:hover { text-decoration: underline; }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .container { padding: 0 1.25rem; }
+    .page { padding: 1.75rem 0 2.5rem; }
+
+    .hero h1 { font-size: 26px; }
+    .hero p { font-size: 15px; }
+
+    .two-col { grid-template-columns: 1fr; gap: 1rem; }
+    .card { padding: 1.5rem; }
+
+    .steps-row { grid-template-columns: 1fr 1fr; }
+    .step { border-right: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; }
+    .step:nth-child(2n) { border-right: none; }
+    .step:nth-child(n+3) { border-bottom: none; }
+    .step-title { white-space: normal; }
+
+    .bottom { grid-template-columns: 1fr; }
+    .bottom-cell { border-right: none; border-bottom: 1px solid #e5e5e5; }
+    .bottom-cell:last-child { border-bottom: none; }
+  }
+
+  @media (max-width: 440px) {
+    .hero h1 { font-size: 22px; }
+    .header-cta { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo-link" href="/" aria-label="Nextblock Labs — home">
+      <img src="/assets/logo5.svg" alt="Nextblock Labs">
+    </a>
+    <a class="header-cta" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a call</a>
+  </div>
+</header>
+
+<main class="page">
+  <div class="container">
+
+    <section class="hero">
+      <div class="hero-tag">Custom AI Build</div>
+      <h1>Stop your team doing work<br>a computer should be doing.</h1>
+      <p>Most business owners try AI, sit through a flashy demo, then nothing actually changes. Staff still spend half their day on admin. Reports still take days. The same details get re-typed into five different systems. I build AI that fits how your business actually runs — quietly handles the repetitive jobs your team shouldn't be doing, remembers your way of working, and gives you back the hours. Fixed scope, fixed price, yours to keep.</p>
+    </section>
+
+    <section class="two-col">
+      <div class="card">
+        <div class="card-label">What you get</div>
+        <div class="bullet-list">
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Hours back every week — the AI handles the repetitive admin your team shouldn't be doing</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Knows your business — your clients, your products, your way of working. You don't explain it twice.</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Reports and updates in minutes instead of days — the numbers ready when you need them</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Yours to keep — full handover, no monthly fees, no agency hanging around</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">Proof it works</div>
+        <div class="proof-text"><strong>Traders Newsbox</strong> — a live AI product I built and run on my own. It watches 100+ news sources, decides which stories matter to which trader, and posts in under 5 seconds. Runs 24/7 without me touching it. One person built and runs a serious AI product because the system does the work. Same approach, built for your business.</div>
+        <div class="proof-sub">Built solo. Run solo. No dev team, no agency. Just the system, quietly doing the job.</div>
+      </div>
+    </section>
+
+    <section class="steps-row">
+      <div class="step">
+        <div class="step-num">01 — Discovery</div>
+        <div class="step-title">Where time goes</div>
+        <div class="step-desc">Find the jobs eating your team's time</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02 — Scope</div>
+        <div class="step-title">Agree the build</div>
+        <div class="step-desc">Fixed scope, fixed price, signed off before build starts</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03 — Build</div>
+        <div class="step-title">Built in weeks</div>
+        <div class="step-desc">You see what's being built as it happens. No black box.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04 — Handover</div>
+        <div class="step-title">You own it</div>
+        <div class="step-desc">Your system. No monthly fees. No lock-in.</div>
+      </div>
+    </section>
+
+    <section class="bottom">
+      <div class="bottom-cell">
+        <div class="bottom-label">Investment</div>
+        <div class="bottom-main">From £1,500</div>
+        <div class="bottom-sub">Pay once for the build. No retainers, no monthly fees. Bigger jobs cost more — you'll know the price upfront.</div>
+      </div>
+      <div class="bottom-cell">
+        <div class="bottom-label">First step</div>
+        <div class="bottom-main">15-minute call</div>
+        <div class="bottom-sub">No pitch, no commitment — just enough to see if there's a fit.</div>
+        <a class="bottom-cta" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a 15-min call</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <span class="footer-brand">Nextblock Labs</span>
+    <span class="footer-line">Custom AI builds, run by <a href="https://linkedin.com/in/shaziqbal">Shaz Iqbal</a></span>
+    <span class="footer-line"><a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
