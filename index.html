@@ -126,7 +126,7 @@ a{color:inherit;text-decoration:none;}
 .logo-bottom{font-size:10px;font-weight:500;letter-spacing:.3em;color:var(--text-muted);margin-top:2px;transition:color .3s;}
 
 /* Nav links */
-.nav-links{display:flex;align-items:center;gap:1.75rem;}
+.nav-links{display:flex;align-items:center;gap:1.5rem;}
 .nav-links a{font-size:13px;font-weight:500;color:var(--text-muted);text-decoration:none;letter-spacing:.01em;transition:color .15s;}
 .nav-links a:hover{color:var(--text-h);}
 
@@ -184,7 +184,7 @@ a{color:inherit;text-decoration:none;}
 
 /* ── Hero ── */
 .hero{
-  padding:5rem 0 4rem;
+  padding:5rem 0 4.5rem;
   border-bottom:1px solid var(--border);
   transition:border-color .3s;
   position:relative;
@@ -237,10 +237,12 @@ a{color:inherit;text-decoration:none;}
 
 .hero-proof{
   margin-top:3rem;
-  padding-top:2rem;
-  border-top:1px solid var(--border);
+  padding:1.25rem 1.5rem;
+  background:var(--bg-off);
+  border:1px solid var(--border);
+  border-radius:12px;
   display:flex;align-items:center;gap:1.25rem;
-  transition:border-color .3s;
+  transition:background .3s,border-color .3s;
 }
 .proof-badge{
   flex-shrink:0;
@@ -254,13 +256,14 @@ a{color:inherit;text-decoration:none;}
 .proof-headline{font-size:14px;font-weight:600;color:var(--text-h);margin-bottom:.2rem;transition:color .3s;}
 .proof-detail{font-size:13px;color:var(--text-muted);transition:color .3s;}
 
-/* ── Problem section ── */
-.section{padding:3.5rem 0;border-bottom:1px solid var(--border);transition:border-color .3s;}
+/* ── Sections ── */
+.section{padding:4.5rem 0;border-bottom:1px solid var(--border);transition:border-color .3s;}
 .section-label{
   font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
   color:var(--text-subtle);margin-bottom:2.5rem;transition:color .3s;
 }
 
+/* ── Problem cards ── */
 .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
 .problem-card{
   background:var(--bg-card);
@@ -285,6 +288,43 @@ a{color:inherit;text-decoration:none;}
 }
 .problem-title{font-size:15px;font-weight:700;color:var(--text-h);margin-bottom:.5rem;line-height:1.3;transition:color .3s;}
 .problem-body{font-size:13px;color:var(--text-muted);line-height:1.65;transition:color .3s;}
+
+/* ── What I build cards ── */
+.build-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.build-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:1.75rem 1.5rem;
+  transition:background .3s,border-color .3s,transform .15s ease,box-shadow .15s ease;
+  display:flex;flex-direction:column;
+}
+.build-card:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow);
+  border-color:var(--border-strong);
+}
+.build-icon{
+  width:40px;height:40px;border-radius:9px;
+  background:var(--pill-bg);
+  color:var(--teal);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.1rem;
+  flex-shrink:0;
+  transition:background .3s,color .3s;
+}
+.build-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.build-title{font-size:15px;font-weight:700;color:var(--text-h);margin-bottom:.55rem;line-height:1.3;transition:color .3s;}
+.build-body{font-size:13px;color:var(--text-muted);line-height:1.65;margin-bottom:1rem;flex-grow:1;transition:color .3s;}
+.build-tag{
+  font-size:11px;
+  color:var(--teal);
+  font-weight:700;
+  letter-spacing:.04em;
+  padding-top:.75rem;
+  border-top:1px solid var(--border);
+  transition:color .3s,border-color .3s;
+}
 
 /* ── Case study / Proof ── */
 .case-block{
@@ -353,7 +393,7 @@ a{color:inherit;text-decoration:none;}
 /* ── CTA Block ── */
 .cta-block{
   background:var(--teal);
-  padding:3rem 3rem;
+  padding:3rem;
   border-radius:14px;
   position:relative;
   overflow:hidden;
@@ -363,7 +403,7 @@ a{color:inherit;text-decoration:none;}
   gap:2.5rem;
 }
 @media(max-width:720px){
-  .cta-block{grid-template-columns:1fr;gap:1.5rem;}
+  .cta-block{grid-template-columns:1fr;gap:1.5rem;padding:2rem;}
 }
 .cta-block::before{
   content:'';
@@ -380,41 +420,101 @@ a{color:inherit;text-decoration:none;}
   pointer-events:none;
 }
 .cta-copy{position:relative;z-index:1;}
-.cta-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:.6rem;}
+.cta-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:.6rem;}
 .cta-headline{font-size:clamp(22px,3.5vw,30px);font-weight:800;color:#ffffff;letter-spacing:-0.025em;line-height:1.2;margin-bottom:.6rem;}
-.cta-sub{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6;max-width:420px;}
+.cta-sub{font-size:14px;color:rgba(255,255,255,0.78);line-height:1.6;max-width:460px;margin-bottom:1rem;}
+.cta-trust{
+  display:flex;flex-wrap:wrap;gap:.4rem .9rem;
+  font-size:12px;
+  color:rgba(255,255,255,0.85);
+  font-weight:600;
+  letter-spacing:.02em;
+}
+.cta-trust span{display:inline-flex;align-items:center;gap:.4rem;}
+.cta-trust span::before{
+  content:'';
+  width:5px;height:5px;border-radius:50%;
+  background:rgba(255,255,255,0.6);
+  flex-shrink:0;
+}
 .cta-action{position:relative;z-index:1;flex-shrink:0;}
 .cta-btn{
   display:inline-block;
   background:#ffffff;color:#0c7878;
   font-size:14px;font-weight:700;
-  padding:.8rem 1.75rem;border-radius:8px;
+  padding:.85rem 1.85rem;border-radius:8px;
   border:none;
   text-decoration:none;
-  transition:opacity .15s ease;
+  transition:opacity .15s ease,transform .15s ease;
   letter-spacing:.01em;
   white-space:nowrap;
 }
-.cta-btn:hover{opacity:.9;}
+.cta-btn:hover{opacity:.92;transform:translateY(-1px);}
 
 /* ── Footer ── */
 .footer{
-  padding:2.5rem 0;
+  padding:3rem 0 2rem;
   border-top:1px solid var(--border);
   transition:border-color .3s;
 }
-.footer-inner{
+.footer-top{
   display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1.25rem;
+  flex-wrap:wrap;gap:1.5rem;
+  padding-bottom:1.5rem;
+  border-bottom:1px solid var(--border);
+  transition:border-color .3s;
 }
-.footer-left{}
-.footer-brand{font-size:14px;font-weight:700;color:var(--text-h);margin-bottom:.2rem;transition:color .3s;}
-.footer-tagline{font-size:12px;color:var(--text-subtle);transition:color .3s;}
-.footer-right{display:flex;align-items:center;gap:1.75rem;flex-wrap:wrap;}
-.footer-links{display:flex;gap:1.25rem;align-items:center;}
-.footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
-.footer-links a:hover{color:var(--teal);}
-.footer-copy{font-size:12px;color:var(--text-subtle);transition:color .3s;white-space:nowrap;}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+  padding-top:1.5rem;
+}
+.footer-brand-row{display:flex;align-items:center;gap:.75rem;}
+.footer-brand-mark{
+  display:grid;grid-template-columns:1fr 1fr;gap:2px;
+  width:22px;flex-shrink:0;
+}
+.footer-brand-mark span{width:10px;height:10px;border-radius:2px;display:block;}
+.footer-brand-mark .a,.footer-brand-mark .c,.footer-brand-mark .d{background:#0c7878;}
+.footer-brand-mark .b{background:#4ec3b9;}
+.footer-brand-name{
+  font-size:14px;font-weight:700;
+  color:var(--text-h);
+  letter-spacing:.04em;
+  transition:color .3s;
+}
+.footer-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+.footer-links a{
+  font-size:13px;
+  color:var(--text-muted);
+  text-decoration:none;
+  transition:color .15s;
+}
+.footer-links a:hover{color:var(--text-h);}
+.footer-links a.footer-cta-link{
+  background:var(--teal);
+  color:#fff;
+  padding:.45rem 1rem;
+  border-radius:6px;
+  font-weight:600;
+  font-size:13px;
+  transition:background .15s ease;
+}
+.footer-links a.footer-cta-link:hover{
+  background:var(--cta-hover);
+  color:#fff;
+}
+.footer-tagline{
+  font-size:13px;
+  color:var(--text-muted);
+  transition:color .3s;
+}
+.footer-copy{
+  font-size:12px;
+  color:var(--text-subtle);
+  transition:color .3s;
+  white-space:nowrap;
+}
 
 /* ── Responsive ── */
 @media(max-width:720px){
@@ -422,14 +522,14 @@ a{color:inherit;text-decoration:none;}
   .hero{padding:3.5rem 0 3rem;}
   .hero-h1{font-size:clamp(28px,8vw,40px);}
   .hero-sub{font-size:16px;}
+  .hero-proof{padding:1rem 1.1rem;gap:1rem;}
+  .section{padding:3rem 0;}
   .problem-grid{grid-template-columns:1fr;}
   .build-grid{grid-template-columns:1fr;}
+  .case-block{padding:1.75rem;}
   .case-stats{gap:1.5rem;}
   .case-name{font-size:22px;}
-  .pricing-block{grid-template-columns:1fr;}
-  .price-cell:first-child{border-right:none;border-bottom:1px solid var(--border);}
-  .footer{flex-direction:column;align-items:flex-start;}
-  .footer-right{text-align:left;}
+  .footer-top,.footer-bottom{flex-direction:column;align-items:flex-start;}
   .footer-links{justify-content:flex-start;}
   .nav-right .toggle-wrap .toggle-label{display:none;}
   .nav-links{display:none;}
@@ -458,6 +558,7 @@ a{color:inherit;text-decoration:none;}
     </a>
     <div class="nav-links" role="navigation" aria-label="Page sections">
       <a href="#problem">The problem</a>
+      <a href="#build">What I build</a>
       <a href="#proof">Proof</a>
       <a href="#process">Process</a>
       <a href="#cta">Get in touch</a>
@@ -531,6 +632,39 @@ a{color:inherit;text-decoration:none;}
   </div>
 </section>
 
+<!-- What I build -->
+<section class="section" id="build">
+  <div class="container">
+    <div class="section-label">What it actually looks like</div>
+    <div class="build-grid">
+      <div class="build-card">
+        <div class="build-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+        </div>
+        <div class="build-title">An inbox that triages itself</div>
+        <div class="build-body">Sorts incoming emails by urgency, drafts the standard replies, and flags only the ones that actually need a human. Runs the moment a message lands.</div>
+        <div class="build-tag">Replaces hours of inbox triage</div>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><polyline points="7 14 11 10 15 13 21 6"/></svg>
+        </div>
+        <div class="build-title">A reporting engine you don't run</div>
+        <div class="build-body">Pulls live numbers from the tools you already use, formatted the way you want them, in your inbox before standup. Every day. No one touching it.</div>
+        <div class="build-tag">Replaces manual reporting</div>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">
+          <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg>
+        </div>
+        <div class="build-title">A bridge between systems that won't talk</div>
+        <div class="build-body">Watches one system for changes, keeps the others in sync, and flags anything that doesn't match. Quietly, in the background, without anyone re-typing.</div>
+        <div class="build-tag">Replaces re-entering data</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Proof / Case study -->
 <section class="section" id="proof">
   <div class="container">
@@ -554,8 +688,8 @@ a{color:inherit;text-decoration:none;}
             <div class="stat-label">Runs unattended</div>
           </div>
           <div class="stat">
-            <div class="stat-num">£0</div>
-            <div class="stat-label">Ongoing labour cost</div>
+            <div class="stat-num">0</div>
+            <div class="stat-label">Staff hours to run it</div>
           </div>
         </div>
         <div class="case-quote">
@@ -611,6 +745,12 @@ a{color:inherit;text-decoration:none;}
         <div class="cta-label">Most builds £1,500–£8,000 · Fixed price, agreed upfront</div>
         <div class="cta-headline">15 minutes to find out<br>if there's something worth building.</div>
         <p class="cta-sub">No pitch, no hard sell. One conversation. I'll ask blunt questions about what your team does — and tell you honestly whether AI makes sense. If there's no fit, I'll say so.</p>
+        <div class="cta-trust">
+          <span>Fixed price</span>
+          <span>30-day bug-fix support</span>
+          <span>No retainer</span>
+          <span>You own the code</span>
+        </div>
       </div>
       <div class="cta-action">
         <a class="cta-btn" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a 15-min call →</a>
@@ -622,18 +762,23 @@ a{color:inherit;text-decoration:none;}
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <div class="footer-brand">Shaz Iqbal · Nextblock Labs</div>
-        <div class="footer-tagline">AI systems that work while you don't.</div>
-      </div>
-      <div class="footer-right">
-        <div class="footer-links">
-          <a href="https://linkedin.com/in/shaziqbal" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a>
+    <div class="footer-top">
+      <div class="footer-brand-row">
+        <div class="footer-brand-mark" aria-hidden="true">
+          <span class="a"></span><span class="b"></span>
+          <span class="c"></span><span class="d"></span>
         </div>
-        <div class="footer-copy">© 2026 Nextblock Labs</div>
+        <div class="footer-brand-name">NEXTBLOCK LABS</div>
       </div>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/shaziqbal" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a>
+        <a class="footer-cta-link" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a call</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-tagline">AI systems that work while you don't.</div>
+      <div class="footer-copy">© 2026 Nextblock Labs · Shaz Iqbal</div>
     </div>
   </div>
 </footer>
