@@ -286,17 +286,24 @@ a{color:inherit;text-decoration:none;}
 .process-title{font-size:16px;font-weight:700;color:var(--text-h);margin-bottom:.35rem;}
 .process-body{font-size:14px;color:var(--text-muted);line-height:1.6;}
 
-/* ── CTA Block ── */
+/* ── CTA Block (grid) ── */
 .cta-block{
   background:var(--bg-proof);
   padding:clamp(1.75rem,3.5vw,2.75rem);
   border-radius:14px;
   position:relative;
   overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:1.25rem;
+  display:grid;
+  grid-template-columns:1fr auto;
+  grid-template-areas:
+    "scarcity action"
+    "label    action"
+    "headline action"
+    "sub      action"
+    "trust    action";
+  column-gap:1.5rem;
+  row-gap:.6rem;
+  align-items:start;
 }
 .cta-block::before{
   content:'';
@@ -313,6 +320,7 @@ a{color:inherit;text-decoration:none;}
   pointer-events:none;
 }
 .cta-scarcity{
+  grid-area:scarcity;
   position:relative;z-index:1;
   display:inline-flex;align-items:center;gap:.5rem;
   font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
@@ -321,27 +329,57 @@ a{color:inherit;text-decoration:none;}
   padding:5px 11px;border-radius:20px;
   width:max-content;
   max-width:100%;
+  margin-bottom:.65rem;
 }
 .cta-scarcity .live-dot{background:#fff;}
-.cta-main-row{
+.cta-label{
+  grid-area:label;
   position:relative;z-index:1;
-  display:flex;
-  align-items:center;
-  gap:1.5rem;
-  flex-wrap:wrap;
-  width:100%;
-}
-.cta-headline-block{
-  flex:1 1 340px;
-  min-width:0;
+  font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);
   max-width:560px;
 }
-.cta-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:.6rem;}
-.cta-headline{font-size:clamp(22px,3.5vw,30px);font-weight:800;color:#ffffff;letter-spacing:-0.025em;line-height:1.2;}
+.cta-headline{
+  grid-area:headline;
+  position:relative;z-index:1;
+  font-size:clamp(22px,3.5vw,30px);font-weight:800;
+  color:#ffffff;letter-spacing:-0.025em;line-height:1.2;
+  max-width:560px;
+  margin-top:.3rem;
+}
+.cta-sub{
+  grid-area:sub;
+  position:relative;z-index:1;
+  font-size:14px;color:rgba(255,255,255,0.78);line-height:1.6;
+  max-width:560px;
+  margin-top:.6rem;
+}
+.cta-trust{
+  grid-area:trust;
+  position:relative;z-index:1;
+  display:flex;flex-wrap:wrap;gap:.4rem .9rem;
+  font-size:12px;
+  color:rgba(255,255,255,0.85);
+  font-weight:600;
+  letter-spacing:.02em;
+  margin-top:.6rem;
+}
+.cta-trust span{display:inline-flex;align-items:center;gap:.4rem;}
+.cta-trust span::before{
+  content:'';
+  width:5px;height:5px;border-radius:50%;
+  background:rgba(255,255,255,0.6);
+  flex-shrink:0;
+}
 .cta-action{
-  flex:1 1 200px;
+  grid-area:action;
+  position:relative;z-index:1;
+  align-self:center;
+  justify-self:center;
   display:flex;
+  align-items:center;
   justify-content:center;
+  min-width:200px;
 }
 .cta-btn{
   display:inline-block;
@@ -355,26 +393,6 @@ a{color:inherit;text-decoration:none;}
   white-space:nowrap;
 }
 .cta-btn:hover{opacity:.92;transform:translateY(-1px);}
-.cta-sub{
-  position:relative;z-index:1;
-  font-size:14px;color:rgba(255,255,255,0.78);line-height:1.6;
-  max-width:560px;
-}
-.cta-trust{
-  position:relative;z-index:1;
-  display:flex;flex-wrap:wrap;gap:.4rem .9rem;
-  font-size:12px;
-  color:rgba(255,255,255,0.85);
-  font-weight:600;
-  letter-spacing:.02em;
-}
-.cta-trust span{display:inline-flex;align-items:center;gap:.4rem;}
-.cta-trust span::before{
-  content:'';
-  width:5px;height:5px;border-radius:50%;
-  background:rgba(255,255,255,0.6);
-  flex-shrink:0;
-}
 
 /* ── Footer ── */
 .footer{
@@ -441,7 +459,23 @@ a{color:inherit;text-decoration:none;}
   .stat-num{font-size:26px;}
   .process-item{grid-template-columns:56px 1fr;gap:1.1rem;padding:1.5rem 0;}
   .process-num{font-size:32px;}
-  .cta-action{width:100%;justify-content:flex-start;}
+  .cta-block{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "scarcity"
+      "label"
+      "headline"
+      "sub"
+      "trust"
+      "action";
+    row-gap:.5rem;
+  }
+  .cta-action{
+    width:100%;
+    justify-self:stretch;
+    justify-content:flex-start;
+    margin-top:1rem;
+  }
   .cta-btn{width:100%;text-align:center;}
   .footer-top,.footer-bottom{flex-direction:column;align-items:flex-start;}
   .nav-links{display:none;}
@@ -616,21 +650,17 @@ a{color:inherit;text-decoration:none;}
         <span class="live-dot"></span>
         Currently accepting 2-3 builds per quarter
       </div>
-      <div class="cta-main-row">
-        <div class="cta-headline-block">
-          <div class="cta-label">Most builds £1,500–£8,000 · Fixed price, agreed upfront</div>
-          <div class="cta-headline">15 minutes to find out<br>if there's something worth building.</div>
-        </div>
-        <div class="cta-action">
-          <a class="cta-btn" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a 15-min call →</a>
-        </div>
-      </div>
+      <div class="cta-label">Most builds £1,500–£8,000 · Fixed price, agreed upfront</div>
+      <div class="cta-headline">15 minutes to find out<br>if there's something worth building.</div>
       <p class="cta-sub">No pitch, no hard sell. One conversation. I'll ask blunt questions about what your team does — and tell you honestly whether AI makes sense. If there's no fit, I'll say so.</p>
       <div class="cta-trust">
         <span>Fixed price</span>
         <span>30-day bug-fix support</span>
         <span>No retainer</span>
         <span>You own the code</span>
+      </div>
+      <div class="cta-action">
+        <a class="cta-btn" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a 15-min call →</a>
       </div>
     </div>
   </div>
