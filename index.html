@@ -193,17 +193,6 @@ a{color:inherit;text-decoration:none;}
   background:var(--teal);
   box-shadow:0 0 0 3px rgba(78,195,185,0.18);
 }
-.proof-badge{
-  position:relative;
-}
-.proof-badge::after{
-  content:'';
-  position:absolute;top:-3px;right:-3px;
-  width:10px;height:10px;border-radius:50%;
-  background:#4ade80;
-  border:2px solid var(--bg-off);
-  animation:blink 2s ease-in-out infinite;
-}
 .proof-headline{font-size:14px;font-weight:600;color:var(--text-h);margin-bottom:.2rem;}
 .proof-detail{font-size:13px;color:var(--text-muted);line-height:1.5;}
 
@@ -244,11 +233,11 @@ a{color:inherit;text-decoration:none;}
 .problem-title{font-size:15px;font-weight:700;color:var(--text-h);margin-bottom:.5rem;line-height:1.3;}
 .problem-body{font-size:13px;color:var(--text-muted);line-height:1.65;}
 
-/* ── Case study / Proof ── */
+/* ── Case study / Proof (centred) ── */
 .case-block{
   background:var(--bg-proof);
   border-radius:12px;
-  padding:clamp(1.75rem,3.5vw,2.5rem);
+  padding:clamp(1.75rem,3.5vw,2.75rem);
   color:#fff;
   position:relative;
   overflow:hidden;
@@ -262,22 +251,37 @@ a{color:inherit;text-decoration:none;}
 }
 .case-block::after{
   content:'';
-  position:absolute;bottom:-60px;right:40px;
+  position:absolute;bottom:-60px;left:-40px;
   width:160px;height:160px;border-radius:50%;
   background:rgba(255,255,255,0.03);
   pointer-events:none;
 }
-.case-inner{position:relative;z-index:1;}
-.case-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:1rem;}
-.case-name{font-size:clamp(22px,3vw,28px);font-weight:800;color:#ffffff;letter-spacing:-0.025em;margin-bottom:.75rem;line-height:1.1;}
-.case-desc{font-size:15px;color:rgba(255,255,255,0.8);line-height:1.65;max-width:560px;margin-bottom:1.75rem;}
+.case-inner{
+  position:relative;z-index:1;
+  text-align:center;
+  display:flex;flex-direction:column;align-items:center;
+}
+.case-tag{
+  font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);margin-bottom:1rem;
+}
+.case-name{
+  font-size:clamp(22px,3vw,28px);font-weight:800;color:#ffffff;
+  letter-spacing:-0.025em;margin-bottom:.75rem;line-height:1.1;
+}
+.case-desc{
+  font-size:15px;color:rgba(255,255,255,0.8);line-height:1.65;
+  max-width:580px;margin:0 auto 1.75rem;
+}
 .case-stats{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
   gap:1.5rem 2rem;
-  margin-bottom:1.75rem;
-  max-width:600px;
+  margin:0 auto 1.75rem;
+  max-width:620px;
+  width:100%;
 }
+.stat{text-align:center;}
 .stat-num{font-size:30px;font-weight:800;color:#ffffff;letter-spacing:-0.03em;line-height:1;}
 .stat-label{font-size:11px;color:rgba(255,255,255,0.55);margin-top:.3rem;font-weight:500;letter-spacing:.02em;}
 .case-quote{
@@ -287,6 +291,8 @@ a{color:inherit;text-decoration:none;}
   font-style:italic;
   color:rgba(255,255,255,0.65);
   line-height:1.6;
+  max-width:680px;
+  margin:0 auto;
 }
 
 /* ── Process ── */
@@ -310,24 +316,18 @@ a{color:inherit;text-decoration:none;}
 .process-title{font-size:16px;font-weight:700;color:var(--text-h);margin-bottom:.35rem;}
 .process-body{font-size:14px;color:var(--text-muted);line-height:1.6;}
 
-/* ── CTA Block (grid) ── */
+/* ── CTA Block (centred) ── */
 .cta-block{
   background:var(--bg-proof);
   padding:clamp(1.75rem,3.5vw,2.75rem);
   border-radius:14px;
   position:relative;
   overflow:hidden;
-  display:grid;
-  grid-template-columns:minmax(0,540px) 1fr;
-  grid-template-areas:
-    "scarcity action"
-    "label    action"
-    "headline action"
-    "sub      action"
-    "trust    action";
-  column-gap:1.5rem;
-  row-gap:.6rem;
-  align-items:start;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:1rem;
 }
 .cta-block::before{
   content:'';
@@ -344,49 +344,40 @@ a{color:inherit;text-decoration:none;}
   pointer-events:none;
 }
 .cta-scarcity{
-  grid-area:scarcity;
   position:relative;z-index:1;
   display:inline-flex;align-items:center;gap:.5rem;
   font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   color:rgba(255,255,255,0.85);
   background:rgba(255,255,255,0.1);
   padding:5px 11px;border-radius:20px;
-  width:max-content;
-  max-width:100%;
-  margin-bottom:.65rem;
+  width:max-content;max-width:100%;
+  margin-bottom:.4rem;
 }
 .cta-scarcity .live-dot{background:#fff;}
 .cta-label{
-  grid-area:label;
   position:relative;z-index:1;
   font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:rgba(255,255,255,0.6);
-  max-width:540px;
+  max-width:560px;
 }
 .cta-headline{
-  grid-area:headline;
   position:relative;z-index:1;
   font-size:clamp(22px,3.5vw,30px);font-weight:800;
   color:#ffffff;letter-spacing:-0.025em;line-height:1.2;
-  max-width:540px;
-  margin-top:.3rem;
+  max-width:580px;
 }
 .cta-sub{
-  grid-area:sub;
   position:relative;z-index:1;
   font-size:14px;color:rgba(255,255,255,0.78);line-height:1.6;
-  max-width:540px;
-  margin-top:.6rem;
+  max-width:520px;
 }
 .cta-trust{
-  grid-area:trust;
   position:relative;z-index:1;
-  display:flex;flex-wrap:wrap;gap:.4rem .9rem;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem .9rem;
   font-size:12px;
   color:rgba(255,255,255,0.85);
   font-weight:600;
   letter-spacing:.02em;
-  margin-top:.6rem;
 }
 .cta-trust span{display:inline-flex;align-items:center;gap:.4rem;}
 .cta-trust span::before{
@@ -396,13 +387,8 @@ a{color:inherit;text-decoration:none;}
   flex-shrink:0;
 }
 .cta-action{
-  grid-area:action;
   position:relative;z-index:1;
-  align-self:center;
-  justify-self:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  margin-top:.5rem;
 }
 .cta-btn{
   display:inline-block;
@@ -475,31 +461,27 @@ a{color:inherit;text-decoration:none;}
 
 /* ── Mobile ── */
 @media(max-width:720px){
-  .hero-proof{padding:1rem 1.1rem;gap:1rem;}
-  .proof-badge{width:38px;height:38px;border-radius:9px;}
-  .proof-badge svg{width:17px;height:17px;}
+  .hero .container{text-align:center;}
+  .hero-h1{margin-left:auto;margin-right:auto;}
+  .hero-sub{margin-left:auto;margin-right:auto;}
+  .hero-actions{justify-content:center;}
+  .hero-proof{
+    flex-direction:column;
+    text-align:center;
+    gap:.85rem;
+    padding:1.1rem;
+  }
+  .proof-badge{
+    width:42px;height:42px;border-radius:9px;
+    align-self:center;
+  }
+  .proof-badge svg{width:19px;height:19px;}
+  .proof-eyebrow{justify-content:center;}
   .case-stats{gap:1.25rem 1.5rem;}
   .stat-num{font-size:26px;}
   .process-item{grid-template-columns:56px 1fr;gap:1.1rem;padding:1.5rem 0;}
   .process-num{font-size:32px;}
-  .cta-block{
-    grid-template-columns:1fr;
-    grid-template-areas:
-      "scarcity"
-      "label"
-      "headline"
-      "sub"
-      "trust"
-      "action";
-    row-gap:.5rem;
-  }
-  .cta-action{
-    width:100%;
-    justify-self:stretch;
-    justify-content:flex-start;
-    margin-top:1rem;
-  }
-  .cta-btn{width:100%;text-align:center;}
+  .cta-btn{width:100%;max-width:320px;text-align:center;}
   .footer-top,.footer-bottom{flex-direction:column;align-items:flex-start;}
   .nav-links{display:none;}
 }
@@ -593,7 +575,7 @@ a{color:inherit;text-decoration:none;}
   </div>
 </section>
 
-<!-- Proof / Case study -->
+<!-- Proof / Case study (centred) -->
 <section class="section" id="proof">
   <div class="container">
     <div class="section-label">Built and running</div>
@@ -665,9 +647,10 @@ a{color:inherit;text-decoration:none;}
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA (centred) -->
 <section class="section" id="cta" style="border-bottom:none;">
   <div class="container">
+    <div class="section-label">First step</div>
     <div class="cta-block">
       <div class="cta-scarcity">
         <span class="live-dot"></span>
