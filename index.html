@@ -126,12 +126,22 @@ a{color:inherit;text-decoration:none;}
   border-bottom:1px solid var(--border);
   position:relative;
   overflow:hidden;
+  text-align:center;
 }
 .hero::before{
   content:'';
   position:absolute;inset:0;
   background:radial-gradient(ellipse 60% 50% at 20% 0%,rgba(78,195,185,0.06) 0%,transparent 70%);
   pointer-events:none;
+}
+.hero-scarcity{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-body);
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border-strong);
+  padding:5px 11px;border-radius:20px;
+  margin-bottom:.85rem;
 }
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:.5rem;
@@ -154,7 +164,7 @@ a{color:inherit;text-decoration:none;}
   color:var(--text-h);
   line-height:1.1;
   letter-spacing:-0.03em;
-  margin-bottom:1.25rem;
+  margin:0 auto 1.25rem;
   max-width:780px;
 }
 .hero-h1 .accent{color:var(--teal);}
@@ -164,10 +174,21 @@ a{color:inherit;text-decoration:none;}
   color:var(--text-body);
   line-height:1.65;
   max-width:640px;
-  margin-bottom:2rem;
+  margin:0 auto 2rem;
 }
 
-.hero-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.hero-trust{
+  font-size:12px;
+  color:var(--text-muted);
+  margin-top:.9rem;
+  letter-spacing:.02em;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem .75rem;
+}
+.hero-trust span{display:inline-flex;align-items:center;gap:.4rem;}
+.hero-trust span + span::before{
+  content:'·';color:var(--text-subtle);
+}
 
 .hero-proof{
   margin-top:clamp(1.75rem,3.5vw,2.5rem);
@@ -176,6 +197,9 @@ a{color:inherit;text-decoration:none;}
   border:1px solid var(--border);
   border-radius:12px;
   display:flex;align-items:center;gap:1.25rem;
+  text-align:left;
+  max-width:640px;
+  margin-left:auto;margin-right:auto;
 }
 .proof-badge{
   flex-shrink:0;
@@ -538,6 +562,10 @@ a{color:inherit;text-decoration:none;}
 <!-- Hero -->
 <section class="hero">
   <div class="container">
+    <div class="hero-scarcity">
+      <span class="live-dot"></span>
+      2-3 builds open this quarter
+    </div>
     <div class="hero-eyebrow">
       <span class="live-dot"></span>
       AI systems that work while you don't
@@ -546,12 +574,15 @@ a{color:inherit;text-decoration:none;}
       Stop paying people for work <span class="accent">machines can do.</span>
     </h1>
     <p class="hero-sub">
-      The copy-pasting, the chasing, the re-entering data into five systems.
-      That work doesn't need a person — it needs a system.
-      We build those systems, and hand them over permanently.
+      The copy-pasting. The chasing. The re-entering data into five systems.<br>
+      That work doesn't need a person. It needs a system.<br>
+      We build it. You keep it.
     </p>
     <div class="hero-actions">
       <a class="btn-cta" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a 15-min call</a>
+    </div>
+    <div class="hero-trust">
+      <span>15 minutes</span><span>No pitch</span><span>Honest call</span>
     </div>
 
     <div class="hero-proof">
