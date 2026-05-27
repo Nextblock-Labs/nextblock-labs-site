@@ -125,8 +125,13 @@ a{color:inherit;text-decoration:none;}
 .logo-top span{font-weight:300;}
 .logo-bottom{font-size:10px;font-weight:500;letter-spacing:.3em;color:var(--text-muted);margin-top:2px;transition:color .3s;}
 
+/* Nav links */
+.nav-links{display:flex;align-items:center;gap:1.75rem;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text-muted);text-decoration:none;letter-spacing:.01em;transition:color .15s;}
+.nav-links a:hover{color:var(--text-h);}
+
 /* Nav right */
-.nav-right{display:flex;align-items:center;gap:1rem;}
+.nav-right{display:flex;align-items:center;gap:1.25rem;}
 
 /* Theme toggle */
 .toggle-wrap{display:flex;align-items:center;gap:.5rem;}
@@ -208,13 +213,13 @@ a{color:inherit;text-decoration:none;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
 
 .hero-h1{
-  font-size:clamp(36px,5.5vw,58px);
+  font-size:clamp(36px,4.2vw,52px);
   font-weight:800;
   color:var(--text-h);
-  line-height:1.08;
+  line-height:1.1;
   letter-spacing:-0.03em;
   margin-bottom:1.5rem;
-  max-width:860px;
+  max-width:680px;
   transition:color .3s;
 }
 .hero-h1 .accent{color:var(--teal);}
@@ -268,14 +273,15 @@ a{color:inherit;text-decoration:none;}
 }
 .problem-num{
   font-size:52px;font-weight:800;
-  color:var(--teal-pale);
+  color:var(--teal);
+  opacity:0.35;
   line-height:1;margin-bottom:.75rem;
   letter-spacing:-0.04em;
-  transition:color .3s;
+  transition:color .3s,opacity .3s;
   font-variant-numeric:tabular-nums;
 }
 [data-theme="dark"] .problem-num{
-  color:rgba(78,195,185,0.12);
+  opacity:0.45;
 }
 .problem-title{font-size:15px;font-weight:700;color:var(--text-h);margin-bottom:.5rem;line-height:1.3;transition:color .3s;}
 .problem-body{font-size:13px;color:var(--text-muted);line-height:1.65;transition:color .3s;}
@@ -347,16 +353,17 @@ a{color:inherit;text-decoration:none;}
 /* ── CTA Block ── */
 .cta-block{
   background:var(--teal);
-  margin:0 calc(-1 * var(--section-bleed, 0px));
-  padding:3rem 2.5rem;
-  border-radius:12px;
+  padding:3rem 3rem;
+  border-radius:14px;
   position:relative;
   overflow:hidden;
-  display:flex;
+  display:grid;
+  grid-template-columns:1fr auto;
   align-items:center;
-  justify-content:space-between;
-  gap:2rem;
-  flex-wrap:wrap;
+  gap:2.5rem;
+}
+@media(max-width:720px){
+  .cta-block{grid-template-columns:1fr;gap:1.5rem;}
 }
 .cta-block::before{
   content:'';
@@ -392,20 +399,22 @@ a{color:inherit;text-decoration:none;}
 
 /* ── Footer ── */
 .footer{
-  padding:3rem 0 2.5rem;
+  padding:2.5rem 0;
   border-top:1px solid var(--border);
-  display:flex;align-items:flex-end;justify-content:space-between;
   transition:border-color .3s;
-  flex-wrap:wrap;gap:1.5rem;
+}
+.footer-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1.25rem;
 }
 .footer-left{}
-.footer-brand{font-size:15px;font-weight:700;color:var(--text-h);margin-bottom:.3rem;transition:color .3s;}
+.footer-brand{font-size:14px;font-weight:700;color:var(--text-h);margin-bottom:.2rem;transition:color .3s;}
 .footer-tagline{font-size:12px;color:var(--text-subtle);transition:color .3s;}
-.footer-right{text-align:right;}
-.footer-links{display:flex;gap:1.25rem;justify-content:flex-end;margin-bottom:.35rem;flex-wrap:wrap;}
+.footer-right{display:flex;align-items:center;gap:1.75rem;flex-wrap:wrap;}
+.footer-links{display:flex;gap:1.25rem;align-items:center;}
 .footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
 .footer-links a:hover{color:var(--teal);}
-.footer-copy{font-size:11px;color:var(--text-subtle);transition:color .3s;}
+.footer-copy{font-size:12px;color:var(--text-subtle);transition:color .3s;white-space:nowrap;}
 
 /* ── Responsive ── */
 @media(max-width:720px){
@@ -423,6 +432,7 @@ a{color:inherit;text-decoration:none;}
   .footer-right{text-align:left;}
   .footer-links{justify-content:flex-start;}
   .nav-right .toggle-wrap .toggle-label{display:none;}
+  .nav-links{display:none;}
 }
 @media(max-width:440px){
   .hero-h1{font-size:26px;}
@@ -446,6 +456,12 @@ a{color:inherit;text-decoration:none;}
         <span class="logo-bottom">LABS</span>
       </div>
     </a>
+    <div class="nav-links" role="navigation" aria-label="Page sections">
+      <a href="#problem">The problem</a>
+      <a href="#proof">Proof</a>
+      <a href="#process">Process</a>
+      <a href="#cta">Get in touch</a>
+    </div>
     <div class="nav-right">
       <div class="toggle-wrap" title="Toggle dark mode">
         <span class="toggle-label" id="toggle-label">Dark</span>
@@ -492,7 +508,7 @@ a{color:inherit;text-decoration:none;}
 </section>
 
 <!-- Problem -->
-<section class="section">
+<section class="section" id="problem">
   <div class="container">
     <div class="section-label">Where the time actually goes</div>
     <div class="problem-grid">
@@ -551,7 +567,7 @@ a{color:inherit;text-decoration:none;}
 </section>
 
 <!-- Process -->
-<section class="section">
+<section class="section" id="process">
   <div class="container">
     <div class="section-label">How it works</div>
     <div class="process-list">
@@ -588,7 +604,7 @@ a{color:inherit;text-decoration:none;}
 </section>
 
 <!-- CTA -->
-<section class="section" style="border-bottom:none;">
+<section class="section" id="cta" style="border-bottom:none;">
   <div class="container">
     <div class="cta-block">
       <div class="cta-copy">
@@ -605,17 +621,19 @@ a{color:inherit;text-decoration:none;}
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="container" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;width:100%;">
-    <div class="footer-left">
-      <div class="footer-brand">Shaz Iqbal · Nextblock Labs</div>
-      <div class="footer-tagline">AI systems that work while you don't.</div>
-    </div>
-    <div class="footer-right">
-      <div class="footer-links">
-        <a href="https://linkedin.com/in/shaziqbal" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-brand">Shaz Iqbal · Nextblock Labs</div>
+        <div class="footer-tagline">AI systems that work while you don't.</div>
       </div>
-      <div class="footer-copy">© 2026 Nextblock Labs</div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="https://linkedin.com/in/shaziqbal" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a>
+        </div>
+        <div class="footer-copy">© 2026 Nextblock Labs</div>
+      </div>
     </div>
   </div>
 </footer>
