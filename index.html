@@ -1,692 +1,694 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nextblock Labs</title>
-<meta name="description" content="Custom AI systems built around your business — not a generic tool. Project-based, fixed-scope, no retainers. From £1,500.">
-
-<!-- Open Graph -->
+<meta name="description" content="AI systems that work while you don't. Built for your business, not a generic demo. Fixed scope, fixed price, yours to keep.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nextblock Labs — Custom AI Builds">
-<meta property="og:description" content="Stop your team doing work a computer should be doing. Custom AI built around how your business actually runs. From £1,500.">
+<meta property="og:title" content="Nextblock Labs">
+<meta property="og:description" content="AI systems that work while you don't.">
 <meta property="og:url" content="https://nextblocklabs.com">
 <meta name="twitter:card" content="summary">
-
-<!-- Favicon — inlined, no external file needed -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='2' width='16' height='16' rx='2' fill='%230c7878'/%3E%3Crect x='21.75' y='2' width='16' height='16' rx='2' fill='%234ec3b9'/%3E%3Crect x='2' y='22' width='16' height='16' rx='2' fill='%230c7878'/%3E%3Crect x='21.75' y='22' width='16' height='16' rx='2' fill='%230c7878'/%3E%3C/svg%3E">
 
 <style>
-  /* ─── Reset ─── */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+/* ── Reset ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
 
-  /* ─── Theme variables ─── */
-  :root {
-    --teal:        #0c7878;
-    --teal-light:  #4ec3b9;
-    --teal-pale:   #e1f5ee;
-    --teal-sub1:   #b6e0d6;
-    --teal-sub2:   #d0ebe3;
-    --radius-card: 10px;
-    --radius-btn:  6px;
-    --transition:  0.25s ease;
-  }
+/* ── Theme ── */
+[data-theme="light"]{
+  --bg:#ffffff;
+  --bg-off:#f7f7f5;
+  --bg-card:#ffffff;
+  --bg-proof:#0c7878;
+  --surface:#f2f2ef;
+  --border:#e8e8e4;
+  --border-strong:#d0d0cc;
+  --text-h:#0d0d0d;
+  --text-body:#3d3d3a;
+  --text-muted:#767672;
+  --text-subtle:#a8a8a3;
+  --teal:#0c7878;
+  --teal-mid:#0f9090;
+  --teal-light:#4ec3b9;
+  --teal-pale:#e6f7f4;
+  --pill-bg:#e6f7f4;
+  --pill-text:#0c7878;
+  --logo-text:#0d0d0d;
+  --nav-bg:rgba(255,255,255,0.92);
+  --nav-border:#ebebeb;
+  --toggle-track:#e8e8e4;
+  --toggle-thumb:#ffffff;
+  --cta-bg:#0c7878;
+  --cta-text:#ffffff;
+  --cta-hover:#0a6565;
+  --ghost-border:#0c7878;
+  --ghost-text:#0c7878;
+  --number-color:#0c7878;
+  --stat-num:#0d0d0d;
+  --proof-label:rgba(255,255,255,0.6);
+  --proof-text:#ffffff;
+  --proof-sub:rgba(255,255,255,0.75);
+  --shadow:0 1px 3px rgba(0,0,0,0.07),0 4px 12px rgba(0,0,0,0.04);
+}
 
-  /* DARK theme */
-  [data-theme="dark"] {
-    --bg:            #0d1117;
-    --bg-card:       rgba(255,255,255,0.04);
-    --bg-card-hover: rgba(255,255,255,0.07);
-    --bg-steps:      rgba(255,255,255,0.03);
-    --bg-nav:        rgba(13,17,23,0.95);
-    --border:        rgba(255,255,255,0.08);
-    --border-nav:    rgba(255,255,255,0.07);
-    --border-footer: rgba(255,255,255,0.07);
-    --text-primary:  #ffffff;
-    --text-body:     rgba(255,255,255,0.55);
-    --text-muted:    rgba(255,255,255,0.35);
-    --text-subtle:   rgba(255,255,255,0.22);
-    --logo-text:     #ffffff;
-    --hero-accent:   #4ec3b9;
-    --pill-bg:       rgba(12,120,120,0.18);
-    --pill-color:    #4ec3b9;
-    --trust-bg:      rgba(12,120,120,0.1);
-    --trust-border:  rgba(12,120,120,0.25);
-    --icon-bg:       rgba(12,120,120,0.15);
-    --step-num-op:   1;
-    --btn-cta-bg:    rgba(12,120,120,0.15);
-    --btn-cta-color: #4ec3b9;
-    --btn-cta-border:rgba(12,120,120,0.45);
-    --btn-cta-hover: rgba(12,120,120,0.28);
-    --proof-sub:     rgba(255,255,255,0.38);
-    --bottom-inv-bg: rgba(255,255,255,0.03);
-    --bottom-inv-price: #ffffff;
-    --bottom-inv-sub: rgba(255,255,255,0.4);
-    --bottom-inv-label: rgba(255,255,255,0.3);
-    --footer-brand:  rgba(255,255,255,0.85);
-    --footer-text:   rgba(255,255,255,0.3);
-    --toggle-bg:     rgba(255,255,255,0.06);
-    --toggle-border: rgba(255,255,255,0.12);
-    --toggle-text:   rgba(255,255,255,0.5);
-    --toggle-active-bg: rgba(12,120,120,0.2);
-    --toggle-active-color: #4ec3b9;
-  }
+[data-theme="dark"]{
+  --bg:#0e0e0c;
+  --bg-off:#141412;
+  --bg-card:#1a1a17;
+  --bg-proof:#0c7878;
+  --surface:#222220;
+  --border:#2a2a27;
+  --border-strong:#3a3a36;
+  --text-h:#f0f0ec;
+  --text-body:#a8a8a0;
+  --text-muted:#6a6a64;
+  --text-subtle:#4a4a46;
+  --teal:#4ec3b9;
+  --teal-mid:#3db8ae;
+  --teal-light:#7dd8d0;
+  --teal-pale:rgba(78,195,185,0.1);
+  --pill-bg:rgba(78,195,185,0.12);
+  --pill-text:#4ec3b9;
+  --logo-text:#f0f0ec;
+  --nav-bg:rgba(14,14,12,0.92);
+  --nav-border:#222220;
+  --toggle-track:#2a2a27;
+  --toggle-thumb:#4ec3b9;
+  --cta-bg:#4ec3b9;
+  --cta-text:#0e0e0c;
+  --cta-hover:#3db8ae;
+  --ghost-border:#4ec3b9;
+  --ghost-text:#4ec3b9;
+  --number-color:#4ec3b9;
+  --stat-num:#f0f0ec;
+  --proof-label:rgba(255,255,255,0.55);
+  --proof-text:#ffffff;
+  --proof-sub:rgba(255,255,255,0.7);
+  --shadow:0 1px 3px rgba(0,0,0,0.3),0 4px 12px rgba(0,0,0,0.2);
+}
 
-  /* LIGHT theme */
-  [data-theme="light"] {
-    --bg:            #ffffff;
-    --bg-card:       #ffffff;
-    --bg-card-hover: #f7fffe;
-    --bg-steps:      #f9f9f7;
-    --bg-nav:        rgba(255,255,255,0.97);
-    --border:        #e5e5e5;
-    --border-nav:    #f0f0f0;
-    --border-footer: #f0f0f0;
-    --text-primary:  #1a1a1a;
-    --text-body:     #555;
-    --text-muted:    #666;
-    --text-subtle:   #888;
-    --logo-text:     #1a1a1a;
-    --hero-accent:   #0c7878;
-    --pill-bg:       #e1f5ee;
-    --pill-color:    #0c7878;
-    --trust-bg:      #f0faf7;
-    --trust-border:  #c8e8de;
-    --icon-bg:       #e1f5ee;
-    --step-num-op:   0.9;
-    --btn-cta-bg:    #ffffff;
-    --btn-cta-color: #0c7878;
-    --btn-cta-border:#0c7878;
-    --btn-cta-hover: #e1f5ee;
-    --proof-sub:     #666;
-    --bottom-inv-bg: #ffffff;
-    --bottom-inv-price: #1a1a1a;
-    --bottom-inv-sub: #666;
-    --bottom-inv-label: #888;
-    --footer-brand:  #1a1a1a;
-    --footer-text:   #888;
-    --toggle-bg:     #f4f4f4;
-    --toggle-border: #e5e5e5;
-    --toggle-text:   #888;
-    --toggle-active-bg: #e1f5ee;
-    --toggle-active-color: #0c7878;
-  }
+/* ── Base ── */
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text-body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  transition:background .3s ease,color .3s ease;
+}
+a{color:inherit;text-decoration:none;}
+.container{max-width:800px;margin:0 auto;padding:0 2rem;}
 
-  /* ─── Base ─── */
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text-primary);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    transition: background var(--transition), color var(--transition);
-  }
+/* ── Nav ── */
+.nav{
+  position:sticky;top:0;z-index:200;
+  background:var(--nav-bg);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--nav-border);
+  padding:.9rem 0;
+  transition:background .3s ease,border-color .3s ease;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;}
 
-  .container { max-width: 780px; margin: 0 auto; padding: 0 1.75rem; }
+/* Logo */
+.logo{display:inline-flex;align-items:center;gap:.7rem;text-decoration:none;}
+.logo-mark{display:grid;grid-template-columns:1fr 1fr;gap:2.5px;width:24px;flex-shrink:0;}
+.logo-mark span{width:10px;height:10px;border-radius:2px;display:block;}
+.sq-a,.sq-c,.sq-d{background:#0c7878;}
+.sq-b{background:#4ec3b9;}
+.logo-wordmark{display:flex;flex-direction:column;line-height:1;}
+.logo-top{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--logo-text);transition:color .3s;}
+.logo-top span{font-weight:300;}
+.logo-bottom{font-size:9px;font-weight:500;letter-spacing:.3em;color:var(--text-muted);margin-top:1px;transition:color .3s;}
 
-  /* ─── Theme toggle bar ─── */
-  .theme-bar {
-    background: var(--toggle-bg);
-    border-bottom: 1px solid var(--toggle-border);
-    padding: 6px 0;
-    text-align: center;
-    transition: background var(--transition), border-color var(--transition);
-  }
-  .theme-bar .container { display: flex; align-items: center; justify-content: flex-end; gap: 0; }
-  .theme-toggle {
-    display: inline-flex;
-    align-items: center;
-    background: transparent;
-    border: 1px solid var(--toggle-border);
-    border-radius: 20px;
-    overflow: hidden;
-    padding: 2px;
-    gap: 2px;
-  }
-  .theme-btn {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    padding: 4px 12px;
-    border: none;
-    background: transparent;
-    color: var(--toggle-text);
-    border-radius: 16px;
-    cursor: pointer;
-    transition: background 0.18s ease, color 0.18s ease;
-    white-space: nowrap;
-  }
-  .theme-btn.active {
-    background: var(--toggle-active-bg);
-    color: var(--toggle-active-color);
-    font-weight: 600;
-  }
+/* Nav right */
+.nav-right{display:flex;align-items:center;gap:1rem;}
 
-  /* ─── Header ─── */
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--bg-nav);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-nav);
-    padding: 1.1rem 0;
-    transition: background var(--transition), border-color var(--transition);
-  }
-  .site-header .container { display: flex; align-items: center; justify-content: space-between; }
-  .logo-link { display: inline-flex; align-items: center; text-decoration: none; }
-  .header-cta {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--btn-cta-color);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--btn-cta-border);
-    border-radius: var(--radius-btn);
-    background: var(--btn-cta-bg);
-    transition: background 0.15s ease, color 0.15s ease;
-    white-space: nowrap;
-  }
-  .header-cta:hover { background: var(--btn-cta-hover); }
+/* Theme toggle */
+.toggle-wrap{display:flex;align-items:center;gap:.5rem;}
+.toggle-label{font-size:11px;color:var(--text-muted);transition:color .3s;}
+.toggle{
+  position:relative;width:40px;height:22px;
+  background:var(--toggle-track);
+  border-radius:11px;
+  border:1px solid var(--border-strong);
+  cursor:pointer;
+  transition:background .25s ease,border-color .25s ease;
+  flex-shrink:0;
+}
+.toggle::after{
+  content:'';
+  position:absolute;top:2px;left:2px;
+  width:16px;height:16px;border-radius:50%;
+  background:var(--toggle-thumb);
+  transition:transform .25s ease,background .25s ease;
+  box-shadow:0 1px 3px rgba(0,0,0,0.15);
+}
+[data-theme="dark"] .toggle::after{transform:translateX(18px);}
 
-  /* ─── Hero ─── */
-  .page { padding: 0 0 4rem; }
+/* CTA button */
+.btn-cta{
+  font-size:13px;font-weight:600;
+  color:var(--cta-text);
+  background:var(--cta-bg);
+  padding:.5rem 1.1rem;
+  border-radius:6px;
+  border:none;
+  text-decoration:none;
+  transition:background .15s ease,opacity .15s ease;
+  white-space:nowrap;
+  letter-spacing:.01em;
+}
+.btn-cta:hover{background:var(--cta-hover);}
+.btn-ghost{
+  font-size:13px;font-weight:600;
+  color:var(--ghost-text);
+  border:1.5px solid var(--ghost-border);
+  padding:.5rem 1.1rem;
+  border-radius:6px;
+  background:transparent;
+  text-decoration:none;
+  transition:background .15s ease;
+  white-space:nowrap;
+}
+.btn-ghost:hover{background:var(--teal-pale);}
 
-  .hero {
-    padding: 3.5rem 0 3rem;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
-    transition: border-color var(--transition);
-  }
+/* ── Hero ── */
+.hero{
+  padding:5rem 0 4rem;
+  border-bottom:1px solid var(--border);
+  transition:border-color .3s;
+  position:relative;
+  overflow:hidden;
+}
+[data-theme="dark"] .hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 50% at 20% 0%,rgba(78,195,185,0.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--pill-text);background:var(--pill-bg);
+  padding:5px 11px;border-radius:20px;
+  margin-bottom:1.75rem;
+  transition:background .3s,color .3s;
+}
+.live-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--teal);
+  animation:blink 2s ease-in-out infinite;
+  flex-shrink:0;
+}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
 
-  /* Dark hero grid background */
-  [data-theme="dark"] .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(12,120,120,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(12,120,120,0.06) 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 40%, transparent 100%);
-    pointer-events: none;
-  }
-  /* Light hero subtle teal wash */
-  [data-theme="light"] .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 70% 60% at 30% 0%, rgba(12,120,120,0.05) 0%, transparent 70%);
-    pointer-events: none;
-  }
+.hero-h1{
+  font-size:clamp(36px,5.5vw,58px);
+  font-weight:800;
+  color:var(--text-h);
+  line-height:1.08;
+  letter-spacing:-0.03em;
+  margin-bottom:1.5rem;
+  max-width:700px;
+  transition:color .3s;
+}
+.hero-h1 .accent{color:var(--teal);}
 
-  .hero-inner { position: relative; z-index: 1; }
-  .hero-tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--pill-color);
-    background: var(--pill-bg);
-    padding: 5px 12px;
-    border-radius: 20px;
-    margin-bottom: 1.25rem;
-    transition: background var(--transition), color var(--transition);
-  }
-  .hero h1 {
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.15;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.025em;
-    max-width: 640px;
-    transition: color var(--transition);
-  }
-  [data-theme="dark"] .hero h1 em {
-    color: var(--teal-light);
-    font-style: normal;
-  }
-  [data-theme="light"] .hero h1 em {
-    color: var(--teal);
-    font-style: normal;
-  }
-  .hero-body {
-    font-size: 17px;
-    color: var(--text-body);
-    line-height: 1.75;
-    max-width: 600px;
-    margin-bottom: 2rem;
-    transition: color var(--transition);
-  }
+.hero-sub{
+  font-size:18px;
+  color:var(--text-muted);
+  line-height:1.65;
+  max-width:560px;
+  margin-bottom:2.5rem;
+  transition:color .3s;
+}
 
-  /* Trust bar */
-  .trust-bar {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: var(--trust-bg);
-    border: 1px solid var(--trust-border);
-    border-radius: 8px;
-    padding: 0.65rem 1rem;
-    font-size: 13px;
-    color: var(--text-body);
-    transition: background var(--transition), border-color var(--transition);
-  }
-  .trust-bar strong { color: var(--hero-accent); font-weight: 600; }
-  .trust-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--teal-light);
-    flex-shrink: 0;
-    box-shadow: 0 0 0 3px rgba(78,195,185,0.2);
-    animation: pulse 2s ease-in-out infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 3px rgba(78,195,185,0.2); }
-    50%       { box-shadow: 0 0 0 5px rgba(78,195,185,0.08); }
-  }
+.hero-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
 
-  /* ─── Icon trust row (light only visible, dark subtler) ─── */
-  .hero-icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  .hero-icon-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-subtle);
-    letter-spacing: 0.02em;
-  }
-  .hero-icon-circle {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: var(--icon-bg);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    transition: background var(--transition);
-  }
-  .hero-icon-circle svg { width: 14px; height: 14px; stroke: var(--teal); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.hero-proof{
+  margin-top:3rem;
+  padding-top:2rem;
+  border-top:1px solid var(--border);
+  display:flex;align-items:flex-start;gap:1.25rem;
+  transition:border-color .3s;
+}
+.proof-badge{
+  flex-shrink:0;
+  width:42px;height:42px;border-radius:8px;
+  background:var(--teal);
+  display:flex;align-items:center;justify-content:center;
+}
+.proof-badge svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.proof-copy{}
+.proof-eyebrow{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-subtle);margin-bottom:.25rem;transition:color .3s;}
+.proof-headline{font-size:14px;font-weight:600;color:var(--text-h);margin-bottom:.2rem;transition:color .3s;}
+.proof-detail{font-size:13px;color:var(--text-muted);transition:color .3s;}
 
-  /* ─── Section spacing ─── */
-  .section { padding: 2rem 0; border-bottom: 1px solid var(--border); transition: border-color var(--transition); }
-  .section:last-of-type { border-bottom: none; }
+/* ── Problem section ── */
+.section{padding:3.5rem 0;border-bottom:1px solid var(--border);transition:border-color .3s;}
+.section-label{
+  font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--text-subtle);margin-bottom:2.5rem;transition:color .3s;
+}
 
-  /* ─── Two-col cards ─── */
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-  .card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    padding: 1.75rem;
-    transition: background var(--transition), border-color var(--transition);
-  }
-  .card-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 1.1rem;
-  }
-  [data-theme="dark"] .card-label { color: var(--teal-light); }
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.problem-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:1.5rem;
+  transition:background .3s,border-color .3s;
+}
+.problem-num{
+  font-size:32px;font-weight:800;
+  color:var(--border-strong);
+  line-height:1;margin-bottom:.75rem;
+  letter-spacing:-0.04em;
+  transition:color .3s;
+}
+.problem-title{font-size:15px;font-weight:700;color:var(--text-h);margin-bottom:.4rem;line-height:1.3;transition:color .3s;}
+.problem-body{font-size:13px;color:var(--text-muted);line-height:1.6;transition:color .3s;}
 
-  /* Bullet list */
-  .bullet-list { display: flex; flex-direction: column; gap: 0.75rem; }
-  .bullet-item { display: flex; gap: 0.8rem; align-items: flex-start; font-size: 14px; color: var(--text-primary); line-height: 1.55; transition: color var(--transition); }
-  .bullet-icon {
-    width: 22px; height: 22px; border-radius: 5px;
-    background: var(--icon-bg);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; margin-top: 1px;
-    transition: background var(--transition);
-  }
-  .bullet-icon svg { width: 11px; height: 11px; stroke: var(--teal); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-  [data-theme="dark"] .bullet-icon svg { stroke: var(--teal-light); }
+/* ── What I build ── */
+.build-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:background .3s,border-color .3s;}
+.build-item{
+  background:var(--bg-card);
+  padding:1.75rem;
+  transition:background .3s;
+}
+.build-icon{
+  width:36px;height:36px;border-radius:8px;
+  background:var(--teal-pale);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;
+  transition:background .3s;
+}
+.build-icon svg{width:17px;height:17px;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.build-title{font-size:15px;font-weight:700;color:var(--text-h);margin-bottom:.4rem;transition:color .3s;}
+.build-body{font-size:13px;color:var(--text-muted);line-height:1.6;transition:color .3s;}
 
-  /* Proof card */
-  .proof-text { font-size: 14px; color: var(--text-primary); line-height: 1.6; transition: color var(--transition); }
-  .proof-text strong { font-weight: 700; }
-  [data-theme="dark"] .proof-text strong { color: var(--teal-light); }
-  [data-theme="light"] .proof-text strong { color: var(--teal); }
-  .proof-sub {
-    font-size: 13px;
-    font-style: italic;
-    color: var(--proof-sub);
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
-    line-height: 1.55;
-    transition: color var(--transition), border-color var(--transition);
-  }
+/* ── Case study / Proof ── */
+.case-block{
+  background:var(--bg-proof);
+  border-radius:12px;
+  padding:2.5rem;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.case-block::before{
+  content:'';
+  position:absolute;top:-40px;right:-40px;
+  width:220px;height:220px;border-radius:50%;
+  background:rgba(255,255,255,0.04);
+  pointer-events:none;
+}
+.case-block::after{
+  content:'';
+  position:absolute;bottom:-60px;right:40px;
+  width:160px;height:160px;border-radius:50%;
+  background:rgba(255,255,255,0.03);
+  pointer-events:none;
+}
+.case-inner{position:relative;z-index:1;}
+.case-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:1rem;}
+.case-name{font-size:28px;font-weight:800;color:#ffffff;letter-spacing:-0.025em;margin-bottom:.75rem;line-height:1.1;}
+.case-desc{font-size:15px;color:rgba(255,255,255,0.8);line-height:1.65;max-width:560px;margin-bottom:2rem;}
+.case-stats{display:flex;gap:2.5rem;margin-bottom:2rem;flex-wrap:wrap;}
+.stat{}
+.stat-num{font-size:30px;font-weight:800;color:#ffffff;letter-spacing:-0.03em;line-height:1;}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.55);margin-top:.2rem;font-weight:500;letter-spacing:.02em;}
+.case-quote{
+  border-top:1px solid rgba(255,255,255,0.15);
+  padding-top:1.25rem;
+  font-size:14px;
+  font-style:italic;
+  color:rgba(255,255,255,0.65);
+  line-height:1.6;
+}
 
-  /* ─── Steps ─── */
-  .steps-row {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    background: var(--bg-steps);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    overflow: hidden;
-    transition: background var(--transition), border-color var(--transition);
-  }
-  .step {
-    padding: 1.4rem 1.25rem;
-    border-right: 1px solid var(--border);
-    min-width: 0;
-    transition: border-color var(--transition);
-    position: relative;
-  }
-  .step:last-child { border-right: none; }
-  .step-num {
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--teal);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-    opacity: var(--step-num-op);
-    letter-spacing: -0.03em;
-  }
-  [data-theme="dark"] .step-num { color: var(--teal-light); opacity: 0.6; }
-  .step-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem; transition: color var(--transition); }
-  .step-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; transition: color var(--transition); }
+/* ── Process ── */
+.process-list{display:flex;flex-direction:column;gap:0;}
+.process-item{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:1.25rem;
+  padding:1.75rem 0;
+  border-bottom:1px solid var(--border);
+  align-items:start;
+  transition:border-color .3s;
+}
+.process-item:last-child{border-bottom:none;}
+.process-num{
+  font-size:12px;font-weight:700;letter-spacing:.06em;
+  color:var(--number-color);
+  padding-top:.15rem;
+  transition:color .3s;
+}
+.process-content{}
+.process-title{font-size:16px;font-weight:700;color:var(--text-h);margin-bottom:.35rem;transition:color .3s;}
+.process-body{font-size:14px;color:var(--text-muted);line-height:1.6;transition:color .3s;}
 
-  /* ─── Bottom CTA block ─── */
-  .bottom {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    overflow: hidden;
-    transition: border-color var(--transition);
-  }
-  .bottom-cell {
-    padding: 1.75rem 2rem;
-    border-right: 1px solid var(--border);
-    background: var(--bottom-inv-bg);
-    transition: background var(--transition), border-color var(--transition);
-  }
-  .bottom-cell:last-child { border-right: none; background: var(--teal); }
-  .bottom-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--bottom-inv-label);
-    margin-bottom: 0.4rem;
-    transition: color var(--transition);
-  }
-  .bottom-cell:last-child .bottom-label { color: var(--teal-sub1); }
-  .bottom-main {
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--bottom-inv-price);
-    margin-bottom: 0.4rem;
-    letter-spacing: -0.02em;
-    transition: color var(--transition);
-  }
-  .bottom-cell:last-child .bottom-main { color: #ffffff; }
-  .bottom-sub {
-    font-size: 13px;
-    color: var(--bottom-inv-sub);
-    line-height: 1.6;
-    transition: color var(--transition);
-  }
-  .bottom-cell:last-child .bottom-sub { color: var(--teal-sub2); }
-  .bottom-cta {
-    display: inline-block;
-    margin-top: 1.1rem;
-    padding: 0.65rem 1.25rem;
-    background: #ffffff;
-    color: var(--teal);
-    font-size: 13px;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: var(--radius-btn);
-    border: 1px solid rgba(255,255,255,0.9);
-    transition: opacity 0.15s ease;
-    letter-spacing: 0.01em;
-  }
-  .bottom-cta:hover { opacity: 0.9; }
+/* ── Pricing ── */
+.pricing-block{
+  display:grid;grid-template-columns:1fr 1fr;
+  border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:border-color .3s,box-shadow .3s;
+}
+.price-cell{padding:2rem 2.25rem;}
+.price-cell:first-child{background:var(--bg-card);border-right:1px solid var(--border);transition:background .3s,border-color .3s;}
+.price-cell:last-child{background:var(--teal);position:relative;overflow:hidden;}
+.price-cell:last-child::before{content:'';position:absolute;top:-30px;right:-30px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,0.05);pointer-events:none;}
+.price-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-subtle);margin-bottom:.5rem;transition:color .3s;}
+.price-cell:last-child .price-label{color:rgba(255,255,255,0.55);}
+.price-main{font-size:36px;font-weight:800;color:var(--text-h);letter-spacing:-0.03em;margin-bottom:.35rem;line-height:1;transition:color .3s;}
+.price-cell:last-child .price-main{color:#ffffff;}
+.price-sub{font-size:13px;color:var(--text-muted);line-height:1.65;transition:color .3s;}
+.price-cell:last-child .price-sub{color:rgba(255,255,255,0.75);}
+.price-btn{
+  display:inline-block;margin-top:1.25rem;
+  background:#ffffff;color:var(--teal);
+  font-size:13px;font-weight:700;
+  padding:.65rem 1.25rem;border-radius:6px;
+  border:1.5px solid rgba(255,255,255,0.9);
+  text-decoration:none;
+  transition:opacity .15s ease;
+  letter-spacing:.01em;
+}
+.price-btn:hover{opacity:.9;}
 
-  /* ─── Footer ─── */
-  .footer {
-    padding: 2.5rem 0 2.5rem;
-    border-top: 1px solid var(--border-footer);
-    text-align: center;
-    transition: border-color var(--transition);
-  }
-  .footer-brand { display: block; font-size: 14px; font-weight: 700; color: var(--footer-brand); margin-bottom: 0.4rem; transition: color var(--transition); }
-  .footer-line { display: block; font-size: 12px; color: var(--footer-text); margin-bottom: 0.3rem; transition: color var(--transition); }
-  .footer-line a { color: var(--teal); text-decoration: none; }
-  [data-theme="dark"] .footer-line a { color: var(--teal-light); }
-  .footer-line a:hover { text-decoration: underline; }
+/* ── Footer ── */
+.footer{
+  padding:3rem 0 2.5rem;
+  border-top:1px solid var(--border);
+  display:flex;align-items:flex-end;justify-content:space-between;
+  transition:border-color .3s;
+  flex-wrap:wrap;gap:1.5rem;
+}
+.footer-left{}
+.footer-brand{font-size:15px;font-weight:700;color:var(--text-h);margin-bottom:.3rem;transition:color .3s;}
+.footer-tagline{font-size:12px;color:var(--text-subtle);transition:color .3s;}
+.footer-right{text-align:right;}
+.footer-links{display:flex;gap:1.25rem;justify-content:flex-end;margin-bottom:.35rem;flex-wrap:wrap;}
+.footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
+.footer-links a:hover{color:var(--teal);}
+.footer-copy{font-size:11px;color:var(--text-subtle);transition:color .3s;}
 
-  /* ─── Responsive ─── */
-  @media (max-width: 720px) {
-    .container { padding: 0 1.25rem; }
-    .hero { padding: 2.5rem 0 2.25rem; }
-    .hero h1 { font-size: 30px; }
-    .hero-body { font-size: 15px; }
-    .two-col { grid-template-columns: 1fr; gap: 1rem; }
-    .card { padding: 1.4rem; }
-    .steps-row { grid-template-columns: 1fr 1fr; }
-    .step { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .step:nth-child(2n) { border-right: none; }
-    .step:nth-child(n+3) { border-bottom: none; }
-    .bottom { grid-template-columns: 1fr; }
-    .bottom-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
-    .bottom-cell:last-child { border-bottom: none; }
-    .hero-icons { gap: 0.75rem; }
-  }
-
-  @media (max-width: 440px) {
-    .hero h1 { font-size: 24px; }
-    .header-cta { display: none; }
-    .trust-bar { font-size: 12px; }
-  }
+/* ── Responsive ── */
+@media(max-width:720px){
+  .container{padding:0 1.25rem;}
+  .hero{padding:3.5rem 0 3rem;}
+  .hero-h1{font-size:clamp(28px,8vw,40px);}
+  .hero-sub{font-size:16px;}
+  .problem-grid{grid-template-columns:1fr;}
+  .build-grid{grid-template-columns:1fr;}
+  .case-stats{gap:1.5rem;}
+  .case-name{font-size:22px;}
+  .pricing-block{grid-template-columns:1fr;}
+  .price-cell:first-child{border-right:none;border-bottom:1px solid var(--border);}
+  .footer{flex-direction:column;align-items:flex-start;}
+  .footer-right{text-align:left;}
+  .footer-links{justify-content:flex-start;}
+  .nav-right .toggle-wrap .toggle-label{display:none;}
+}
+@media(max-width:440px){
+  .hero-h1{font-size:26px;}
+  .btn-cta,.btn-ghost{font-size:12px;padding:.5rem .9rem;}
+  .nav-right .btn-cta{display:none;}
+}
 </style>
 </head>
 <body>
 
-<!-- Theme toggle bar -->
-<div class="theme-bar">
-  <div class="container">
-    <div class="theme-toggle" role="group" aria-label="Theme switcher">
-      <button class="theme-btn active" id="btn-dark" onclick="setTheme('dark')" aria-pressed="true">Dark</button>
-      <button class="theme-btn" id="btn-light" onclick="setTheme('light')" aria-pressed="false">Light</button>
-    </div>
-  </div>
-</div>
-
-<!-- Header -->
-<header class="site-header">
-  <div class="container">
-    <a class="logo-link" href="/" aria-label="Nextblock Labs — home">
-      <svg width="200" height="42" viewBox="0 0 200 42" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nextblock Labs">
-        <rect x="2" y="2" width="16" height="16" rx="2" ry="2" fill="#0c7878"/>
-        <rect x="21.75" y="2" width="16" height="16" rx="2" ry="2" fill="#4ec3b9"/>
-        <rect x="2" y="22" width="16" height="16" rx="2" ry="2" fill="#0c7878"/>
-        <rect x="21.75" y="22" width="16" height="16" rx="2" ry="2" fill="#0c7878"/>
-        <g stroke="rgba(26,26,26,0.2)" stroke-width="1.2" stroke-linecap="square">
-          <line x1="18.5" y1="11" x2="21.25" y2="11"/>
-          <line x1="18.5" y1="31" x2="21.25" y2="31"/>
-          <line x1="10" y1="18.5" x2="10" y2="21.5"/>
-          <line x1="30" y1="18.5" x2="30" y2="21.5"/>
-        </g>
-        <g transform="translate(45, 0)">
-          <text x="0" y="19" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" letter-spacing="0.02em">
-            <tspan font-weight="700" fill="currentColor">NEXT</tspan><tspan font-weight="400" fill="currentColor">BLOCK</tspan>
-          </text>
-          <text x="0" y="36.5" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="400" letter-spacing="0.31em" fill="currentColor">LABS</text>
-        </g>
-      </svg>
+<!-- Nav -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="/" aria-label="Nextblock Labs">
+      <div class="logo-mark">
+        <span class="sq-a"></span><span class="sq-b"></span>
+        <span class="sq-c"></span><span class="sq-d"></span>
+      </div>
+      <div class="logo-wordmark">
+        <span class="logo-top">NEXT<span>BLOCK</span></span>
+        <span class="logo-bottom">LABS</span>
+      </div>
     </a>
-    <a class="header-cta" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a call</a>
+    <div class="nav-right">
+      <div class="toggle-wrap" title="Toggle dark mode">
+        <span class="toggle-label" id="toggle-label">Dark</span>
+        <div class="toggle" id="theme-toggle" role="switch" aria-checked="false" aria-label="Toggle dark mode" tabindex="0"></div>
+      </div>
+      <a class="btn-cta" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a call</a>
+    </div>
   </div>
-</header>
+</nav>
 
-<main class="page">
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-tag">Custom AI Build</div>
-      <h1>Stop your team doing work<br><em>a computer should be doing.</em></h1>
-      <p class="hero-body">Most business owners try AI, sit through a flashy demo, then nothing actually changes. Staff still spend half their day on admin. Reports still take days. The same details get re-typed into five different systems. I build AI that fits how your business actually runs — quietly handles the repetitive jobs your team shouldn't be doing, remembers your way of working, and gives you back the hours. Fixed scope, fixed price, yours to keep.</p>
-
-      <div class="trust-bar">
-        <div class="trust-dot"></div>
-        <span><strong>Traders Newsbox</strong> — live AI system, 100+ sources, posts in under 1 second. Running 24/7 unattended.</span>
-      </div>
-
-      <div class="hero-icons">
-        <div class="hero-icon-item">
-          <div class="hero-icon-circle">
-            <!-- clock icon -->
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          Fixed timeline
-        </div>
-        <div class="hero-icon-item">
-          <div class="hero-icon-circle">
-            <!-- tag/price icon -->
-            <svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-          </div>
-          Fixed price
-        </div>
-        <div class="hero-icon-item">
-          <div class="hero-icon-circle">
-            <!-- check icon -->
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          Yours to keep
-        </div>
-        <div class="hero-icon-item">
-          <div class="hero-icon-circle">
-            <!-- shield icon -->
-            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          No lock-in
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What you get + Proof -->
-  <section class="section">
-    <div class="container">
-      <div class="two-col">
-        <div class="card">
-          <div class="card-label">What you get</div>
-          <div class="bullet-list">
-            <div class="bullet-item">
-              <div class="bullet-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-              <span>Hours back every week — the AI handles the repetitive admin your team shouldn't be doing</span>
-            </div>
-            <div class="bullet-item">
-              <div class="bullet-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
-              <span>Knows your business — your clients, your products, your way of working. You don't explain it twice.</span>
-            </div>
-            <div class="bullet-item">
-              <div class="bullet-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-              <span>Reports and updates in minutes instead of days — the numbers ready when you need them</span>
-            </div>
-            <div class="bullet-item">
-              <div class="bullet-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
-              <span>Yours to keep — full handover, no monthly fees, no agency hanging around</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-label">Proof it works</div>
-          <p class="proof-text"><strong>Traders Newsbox</strong> — a live AI system that watches 100+ news sources, decides which stories matter to which trader, and posts in under 1 second. Runs 24/7 unattended. Same approach, built for your business.</p>
-          <p class="proof-sub">Built solo. Run solo. No dev team, no agency. Just the system, quietly doing the job.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4-step process -->
-  <section class="section">
-    <div class="container">
-      <div class="steps-row">
-        <div class="step">
-          <div class="step-num">01</div>
-          <div class="step-title">Discovery</div>
-          <div class="step-desc">Find the jobs eating your team's time</div>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <div class="step-title">Scope</div>
-          <div class="step-desc">Fixed scope, fixed price, signed off before build starts</div>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <div class="step-title">Build</div>
-          <div class="step-desc">You see what's being built as it happens. No black box.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">04</div>
-          <div class="step-title">Handover</div>
-          <div class="step-desc">Your system. No monthly fees. No lock-in.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Investment + First step -->
-  <section class="section" style="border-bottom:none; padding-bottom: 0;">
-    <div class="container">
-      <div class="bottom">
-        <div class="bottom-cell">
-          <div class="bottom-label">Investment</div>
-          <div class="bottom-main">From £1,500</div>
-          <p class="bottom-sub">Pay once for the build. No retainers, no monthly fees. Bigger jobs cost more — you'll know the price upfront.</p>
-        </div>
-        <div class="bottom-cell">
-          <div class="bottom-label">First step</div>
-          <div class="bottom-main">15-minute call</div>
-          <p class="bottom-sub">No pitch, no commitment — just enough to see if there's a fit.</p>
-          <a class="bottom-cta" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a 15-min call</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
+<!-- Hero -->
+<section class="hero">
   <div class="container">
-    <span class="footer-brand">Nextblock Labs</span>
-    <span class="footer-line">Shaz Iqbal &nbsp;·&nbsp; <a href="https://linkedin.com/in/shaziqbal">LinkedIn</a></span>
-    <span class="footer-line"><a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a></span>
+    <div class="hero-eyebrow">
+      <span class="live-dot"></span>
+      AI Systems · Built for Business
+    </div>
+    <h1 class="hero-h1">
+      Your team is <span class="accent">too expensive</span><br>
+      to be doing this manually.
+    </h1>
+    <p class="hero-sub">
+      The copy-pasting, the chasing, the re-entering data into five systems.
+      I build AI that takes those jobs off your team's plate — permanently.
+      Built around how you actually work, not a template.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-cta" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a 15-min call</a>
+      <a class="btn-ghost" href="#proof">See it in action</a>
+    </div>
+
+    <div class="hero-proof">
+      <div class="proof-badge">
+        <!-- lightning bolt -->
+        <svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg>
+      </div>
+      <div class="proof-copy">
+        <div class="proof-eyebrow">Live system</div>
+        <div class="proof-headline">Traders Newsbox is running right now</div>
+        <div class="proof-detail">100+ sources monitored · posts in under 1 second · zero human involvement · 24/7</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Where the time actually goes</div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-num">01</div>
+        <div class="problem-title">Admin that never ends</div>
+        <div class="problem-body">Data entry, status updates, chasing approvals. It's not complex — it just takes hours your people shouldn't be spending.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">02</div>
+        <div class="problem-title">Reports that take days</div>
+        <div class="problem-body">By the time the numbers are ready, the moment has passed. Decisions get made on gut feel because the data isn't there in time.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">03</div>
+        <div class="problem-title">Systems that don't talk</div>
+        <div class="problem-body">The same information lives in three places, entered by three different people. Errors creep in. Stuff falls through the cracks.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What I build -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">What I build</div>
+    <div class="build-grid">
+      <div class="build-item">
+        <div class="build-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <div class="build-title">Automated workflows</div>
+        <div class="build-body">Repetitive processes that run on their own — no babysitting, no errors from copy-paste, no chasing.</div>
+      </div>
+      <div class="build-item">
+        <div class="build-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="build-title">Real-time monitoring</div>
+        <div class="build-body">AI that watches the things you need to know about — customers, data, markets — and tells you when it matters.</div>
+      </div>
+      <div class="build-item">
+        <div class="build-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="build-title">Instant reporting</div>
+        <div class="build-body">Numbers your team needs — pulled, formatted and delivered automatically. No spreadsheet gymnastics.</div>
+      </div>
+      <div class="build-item">
+        <div class="build-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="build-title">Always-on systems</div>
+        <div class="build-body">The work happens at 3am, on weekends, between meetings — without anyone needing to push the button.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Proof / Case study -->
+<section class="section" id="proof">
+  <div class="container">
+    <div class="section-label">Built and running</div>
+    <div class="case-block">
+      <div class="case-inner">
+        <div class="case-tag">Case study · Live system</div>
+        <div class="case-name">Traders Newsbox</div>
+        <p class="case-desc">A financial intelligence system that monitors over 100 news sources simultaneously, decides in real time which stories are relevant to which type of trader, and delivers them to the right audience — automatically, in under a second. No editors. No delays. No missed stories.</p>
+        <div class="case-stats">
+          <div class="stat">
+            <div class="stat-num">100+</div>
+            <div class="stat-label">Sources monitored</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">&lt;1s</div>
+            <div class="stat-label">Delivery time</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">Runs unattended</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">£0</div>
+            <div class="stat-label">Ongoing labour cost</div>
+          </div>
+        </div>
+        <div class="case-quote">
+          Built solo. Run solo. No dev team, no agency. Just the system, quietly doing the job — the same approach I'll take with yours.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">How it works</div>
+    <div class="process-list">
+      <div class="process-item">
+        <div class="process-num">01</div>
+        <div class="process-content">
+          <div class="process-title">Discovery — find where the time goes</div>
+          <div class="process-body">One conversation. I'll ask blunt questions about your day-to-day and find the three or four things that are eating your team's time. Most clients are surprised how obvious the answer is once someone looks.</div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">02</div>
+        <div class="process-content">
+          <div class="process-title">Scope — agree what gets built</div>
+          <div class="process-body">Fixed deliverable, fixed price, documented before anything starts. You know exactly what you're getting and exactly what it costs. No surprises mid-build.</div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">03</div>
+        <div class="process-content">
+          <div class="process-title">Build — you see it as it happens</div>
+          <div class="process-body">Not a black box. I build in plain sight, show you working versions as they're ready, and adjust if something isn't right. Typically weeks, not months.</div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">04</div>
+        <div class="process-content">
+          <div class="process-title">Handover — it's yours</div>
+          <div class="process-body">Full handover. You own the system, the code, the documentation. No monthly retainer, no dependency on me to keep it running. It runs on its own.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section" style="border-bottom:none;">
+  <div class="container">
+    <div class="section-label">Investment</div>
+    <div class="pricing-block">
+      <div class="price-cell">
+        <div class="price-label">Starting from</div>
+        <div class="price-main">£1,500</div>
+        <p class="price-sub">One-time. No retainers, no monthly fees, no surprise invoices. Bigger, more complex builds cost more — you'll know the exact number before anything starts.</p>
+      </div>
+      <div class="price-cell">
+        <div class="price-label">First step</div>
+        <div class="price-main">15 minutes</div>
+        <p class="price-sub">A short call to see if there's something worth building. No pitch, no hard sell. If there's a fit, I'll tell you. If there isn't, I'll tell you that too.</p>
+        <a class="price-btn" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a 15-min call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;width:100%;">
+    <div class="footer-left">
+      <div class="footer-brand">Nextblock Labs</div>
+      <div class="footer-tagline">AI systems that work while you don't.</div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/shaziqbal">Shaz Iqbal</a>
+        <a href="https://linkedin.com/in/shaziqbal">LinkedIn</a>
+        <a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a>
+      </div>
+      <div class="footer-copy">© 2026 Nextblock Labs</div>
+    </div>
   </div>
 </footer>
 
 <script>
-  function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    document.getElementById('btn-dark').classList.toggle('active', theme === 'dark');
-    document.getElementById('btn-light').classList.toggle('active', theme === 'light');
-    document.getElementById('btn-dark').setAttribute('aria-pressed', theme === 'dark');
-    document.getElementById('btn-light').setAttribute('aria-pressed', theme === 'light');
-    try { localStorage.setItem('nbl-theme', theme); } catch(e) {}
+(function(){
+  var html = document.documentElement;
+  var toggle = document.getElementById('theme-toggle');
+  var label = document.getElementById('toggle-label');
+
+  function applyTheme(t){
+    html.setAttribute('data-theme', t);
+    toggle.setAttribute('aria-checked', t === 'dark');
+    label.textContent = t === 'dark' ? 'Light' : 'Dark';
+    try{ localStorage.setItem('nbl-theme', t); }catch(e){}
   }
-  (function() {
-    try {
-      var saved = localStorage.getItem('nbl-theme');
-      if (saved === 'light' || saved === 'dark') setTheme(saved);
-    } catch(e) {}
-  })();
+
+  // Load saved preference
+  try{
+    var saved = localStorage.getItem('nbl-theme');
+    if(saved === 'dark' || saved === 'light') applyTheme(saved);
+  }catch(e){}
+
+  // Toggle click
+  toggle.addEventListener('click', function(){
+    var current = html.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  // Keyboard support
+  toggle.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      toggle.click();
+    }
+  });
+})();
 </script>
 
 </body>
