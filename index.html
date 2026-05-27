@@ -206,7 +206,7 @@ a{color:inherit;text-decoration:none;}
   color:var(--text-muted);margin-bottom:2.5rem;
 }
 
-/* ── Problem cards ── */
+/* ── Problem cards (no big numbers — title-led) ── */
 .problem-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -222,15 +222,7 @@ a{color:inherit;text-decoration:none;}
   position:relative;
 }
 .problem-card:hover{transform:translateY(-2px);border-color:var(--border-strong);}
-.problem-num{
-  font-size:52px;font-weight:800;
-  color:var(--teal);
-  opacity:0.45;
-  line-height:1;margin-bottom:.75rem;
-  letter-spacing:-0.04em;
-  font-variant-numeric:tabular-nums;
-}
-.problem-title{font-size:15px;font-weight:700;color:var(--text-h);margin-bottom:.5rem;line-height:1.3;}
+.problem-title{font-size:17px;font-weight:700;color:var(--text-h);margin-bottom:.6rem;line-height:1.3;}
 .problem-body{font-size:13px;color:var(--text-muted);line-height:1.65;}
 
 /* ── Case study / Proof (centred) ── */
@@ -477,12 +469,36 @@ a{color:inherit;text-decoration:none;}
   }
   .proof-badge svg{width:19px;height:19px;}
   .proof-eyebrow{justify-content:center;}
+
+  /* Centre + lift section labels so they read like chapter breaks */
+  .section-label{
+    text-align:center;
+    font-size:14px;
+    letter-spacing:.16em;
+    color:var(--text-body);
+    margin-bottom:2rem;
+  }
+
+  /* Problem cards — centre title + body, keep teal bar */
+  .problem-card{text-align:center;border-left:none;border-top:3px solid var(--teal);border-radius:10px;padding:1.5rem 1.25rem;}
+  .problem-title{font-size:16px;}
+
   .case-stats{gap:1.25rem 1.5rem;}
   .stat-num{font-size:26px;}
   .process-item{grid-template-columns:56px 1fr;gap:1.1rem;padding:1.5rem 0;}
   .process-num{font-size:32px;}
   .cta-btn{width:100%;max-width:320px;text-align:center;}
-  .footer-top,.footer-bottom{flex-direction:column;align-items:flex-start;}
+
+  /* Centred-stack footer — desktop layout untouched */
+  .footer-top,.footer-bottom{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .footer-brand-row{justify-content:center;}
+  .footer-links,.footer-values{justify-content:center;}
+  .footer-copy{white-space:normal;}
+
   .nav-links{display:none;}
 }
 @media(max-width:440px){
@@ -557,17 +573,14 @@ a{color:inherit;text-decoration:none;}
     <div class="section-label">Where the time actually goes</div>
     <div class="problem-grid">
       <div class="problem-card">
-        <div class="problem-num">01</div>
         <div class="problem-title">Admin that never ends</div>
         <div class="problem-body">Data entry, status updates, chasing approvals. It's not complex — it just takes hours your people shouldn't be spending.</div>
       </div>
       <div class="problem-card">
-        <div class="problem-num">02</div>
         <div class="problem-title">Reports that take days</div>
         <div class="problem-body">By the time the numbers are ready, the moment has passed. Decisions get made on gut feel because the data isn't there in time.</div>
       </div>
       <div class="problem-card">
-        <div class="problem-num">03</div>
         <div class="problem-title">Systems that don't talk</div>
         <div class="problem-body">The same information lives in three places, entered by three different people. Errors creep in. Stuff falls through the cracks.</div>
       </div>
