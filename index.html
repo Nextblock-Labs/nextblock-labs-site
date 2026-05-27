@@ -52,6 +52,7 @@ html{scroll-behavior:smooth;}
   --proof-text:#ffffff;
   --proof-sub:rgba(255,255,255,0.75);
   --shadow:0 1px 3px rgba(0,0,0,0.07),0 4px 12px rgba(0,0,0,0.04);
+  --footer-dot:#cfcfca;
 }
 
 [data-theme="dark"]{
@@ -88,6 +89,7 @@ html{scroll-behavior:smooth;}
   --proof-text:#ffffff;
   --proof-sub:rgba(255,255,255,0.7);
   --shadow:0 1px 3px rgba(0,0,0,0.3),0 4px 12px rgba(0,0,0,0.2);
+  --footer-dot:#3a3a36;
 }
 
 /* ── Base ── */
@@ -100,7 +102,11 @@ body{
   transition:background .3s ease,color .3s ease;
 }
 a{color:inherit;text-decoration:none;}
-.container{max-width:1080px;margin:0 auto;padding:0 2.5rem;}
+.container{
+  max-width:1080px;
+  margin:0 auto;
+  padding:0 clamp(1.25rem,3.5vw,2.5rem);
+}
 
 /* ── Nav ── */
 .nav{
@@ -112,10 +118,10 @@ a{color:inherit;text-decoration:none;}
   padding:.9rem 0;
   transition:background .3s ease,border-color .3s ease;
 }
-.nav-inner{display:flex;align-items:center;justify-content:space-between;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;}
 
 /* Logo */
-.logo{display:inline-flex;align-items:center;gap:.85rem;text-decoration:none;}
+.logo{display:inline-flex;align-items:center;gap:.85rem;text-decoration:none;flex-shrink:0;}
 .logo-mark{display:grid;grid-template-columns:1fr 1fr;gap:3px;width:32px;flex-shrink:0;}
 .logo-mark span{width:14px;height:14px;border-radius:3px;display:block;}
 .sq-a,.sq-c,.sq-d{background:#0c7878;}
@@ -131,7 +137,7 @@ a{color:inherit;text-decoration:none;}
 .nav-links a:hover{color:var(--text-h);}
 
 /* Nav right */
-.nav-right{display:flex;align-items:center;gap:1.25rem;}
+.nav-right{display:flex;align-items:center;gap:1.1rem;flex-shrink:0;}
 
 /* Theme toggle */
 .toggle-wrap{display:flex;align-items:center;gap:.5rem;}
@@ -160,31 +166,20 @@ a{color:inherit;text-decoration:none;}
   font-size:13px;font-weight:600;
   color:var(--cta-text);
   background:var(--cta-bg);
-  padding:.5rem 1.1rem;
+  padding:.55rem 1.1rem;
   border-radius:6px;
   border:none;
   text-decoration:none;
   transition:background .15s ease,opacity .15s ease;
   white-space:nowrap;
   letter-spacing:.01em;
+  display:inline-block;
 }
 .btn-cta:hover{background:var(--cta-hover);}
-.btn-ghost{
-  font-size:13px;font-weight:600;
-  color:var(--ghost-text);
-  border:1.5px solid var(--ghost-border);
-  padding:.5rem 1.1rem;
-  border-radius:6px;
-  background:transparent;
-  text-decoration:none;
-  transition:background .15s ease;
-  white-space:nowrap;
-}
-.btn-ghost:hover{background:var(--teal-pale);}
 
 /* ── Hero ── */
 .hero{
-  padding:5rem 0 4.5rem;
+  padding:clamp(3rem,6vw,5rem) 0 clamp(2.5rem,5vw,4.5rem);
   border-bottom:1px solid var(--border);
   transition:border-color .3s;
   position:relative;
@@ -213,19 +208,19 @@ a{color:inherit;text-decoration:none;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
 
 .hero-h1{
-  font-size:clamp(36px,4.2vw,52px);
+  font-size:clamp(30px,5.2vw,52px);
   font-weight:800;
   color:var(--text-h);
   line-height:1.1;
   letter-spacing:-0.03em;
   margin-bottom:1.5rem;
-  max-width:680px;
+  max-width:780px;
   transition:color .3s;
 }
 .hero-h1 .accent{color:var(--teal);}
 
 .hero-sub{
-  font-size:18px;
+  font-size:clamp(15px,1.6vw,18px);
   color:var(--text-muted);
   line-height:1.65;
   max-width:640px;
@@ -236,7 +231,7 @@ a{color:inherit;text-decoration:none;}
 .hero-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
 
 .hero-proof{
-  margin-top:3rem;
+  margin-top:clamp(2rem,4vw,3rem);
   padding:1.25rem 1.5rem;
   background:var(--bg-off);
   border:1px solid var(--border);
@@ -251,25 +246,32 @@ a{color:inherit;text-decoration:none;}
   display:flex;align-items:center;justify-content:center;
 }
 .proof-badge svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block;}
-.proof-copy{}
 .proof-eyebrow{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-subtle);margin-bottom:.25rem;transition:color .3s;}
 .proof-headline{font-size:14px;font-weight:600;color:var(--text-h);margin-bottom:.2rem;transition:color .3s;}
-.proof-detail{font-size:13px;color:var(--text-muted);transition:color .3s;}
+.proof-detail{font-size:13px;color:var(--text-muted);line-height:1.5;transition:color .3s;}
 
 /* ── Sections ── */
-.section{padding:4.5rem 0;border-bottom:1px solid var(--border);transition:border-color .3s;}
+.section{
+  padding:clamp(3rem,6vw,4.5rem) 0;
+  border-bottom:1px solid var(--border);
+  transition:border-color .3s;
+}
 .section-label{
   font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
   color:var(--text-subtle);margin-bottom:2.5rem;transition:color .3s;
 }
 
 /* ── Problem cards ── */
-.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.problem-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1.25rem;
+}
 .problem-card{
   background:var(--bg-card);
   border:1px solid var(--border);
   border-left:3px solid var(--teal);
-  border-radius:10px;
+  border-radius:0 10px 10px 0;
   padding:1.75rem 1.5rem;
   transition:background .3s,border-color .3s;
   position:relative;
@@ -289,48 +291,11 @@ a{color:inherit;text-decoration:none;}
 .problem-title{font-size:15px;font-weight:700;color:var(--text-h);margin-bottom:.5rem;line-height:1.3;transition:color .3s;}
 .problem-body{font-size:13px;color:var(--text-muted);line-height:1.65;transition:color .3s;}
 
-/* ── What I build cards ── */
-.build-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
-.build-card{
-  background:var(--bg-card);
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:1.75rem 1.5rem;
-  transition:background .3s,border-color .3s,transform .15s ease,box-shadow .15s ease;
-  display:flex;flex-direction:column;
-}
-.build-card:hover{
-  transform:translateY(-2px);
-  box-shadow:var(--shadow);
-  border-color:var(--border-strong);
-}
-.build-icon{
-  width:40px;height:40px;border-radius:9px;
-  background:var(--pill-bg);
-  color:var(--teal);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:1.1rem;
-  flex-shrink:0;
-  transition:background .3s,color .3s;
-}
-.build-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-.build-title{font-size:15px;font-weight:700;color:var(--text-h);margin-bottom:.55rem;line-height:1.3;transition:color .3s;}
-.build-body{font-size:13px;color:var(--text-muted);line-height:1.65;margin-bottom:1rem;flex-grow:1;transition:color .3s;}
-.build-tag{
-  font-size:11px;
-  color:var(--teal);
-  font-weight:700;
-  letter-spacing:.04em;
-  padding-top:.75rem;
-  border-top:1px solid var(--border);
-  transition:color .3s,border-color .3s;
-}
-
 /* ── Case study / Proof ── */
 .case-block{
   background:var(--bg-proof);
   border-radius:12px;
-  padding:2.5rem;
+  padding:clamp(1.75rem,3.5vw,2.5rem);
   color:#fff;
   position:relative;
   overflow:hidden;
@@ -351,12 +316,17 @@ a{color:inherit;text-decoration:none;}
 }
 .case-inner{position:relative;z-index:1;}
 .case-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:1rem;}
-.case-name{font-size:28px;font-weight:800;color:#ffffff;letter-spacing:-0.025em;margin-bottom:.75rem;line-height:1.1;}
-.case-desc{font-size:15px;color:rgba(255,255,255,0.8);line-height:1.65;max-width:560px;margin-bottom:2rem;}
-.case-stats{display:flex;gap:2.5rem;margin-bottom:2rem;flex-wrap:wrap;}
-.stat{}
+.case-name{font-size:clamp(22px,3vw,28px);font-weight:800;color:#ffffff;letter-spacing:-0.025em;margin-bottom:.75rem;line-height:1.1;}
+.case-desc{font-size:15px;color:rgba(255,255,255,0.8);line-height:1.65;max-width:560px;margin-bottom:1.75rem;}
+.case-stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:1.5rem 2rem;
+  margin-bottom:1.75rem;
+  max-width:600px;
+}
 .stat-num{font-size:30px;font-weight:800;color:#ffffff;letter-spacing:-0.03em;line-height:1;}
-.stat-label{font-size:11px;color:rgba(255,255,255,0.55);margin-top:.2rem;font-weight:500;letter-spacing:.02em;}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.55);margin-top:.3rem;font-weight:500;letter-spacing:.02em;}
 .case-quote{
   border-top:1px solid rgba(255,255,255,0.15);
   padding-top:1.25rem;
@@ -386,24 +356,20 @@ a{color:inherit;text-decoration:none;}
   transition:color .3s;
   font-variant-numeric:tabular-nums;
 }
-.process-content{}
 .process-title{font-size:16px;font-weight:700;color:var(--text-h);margin-bottom:.35rem;transition:color .3s;}
 .process-body{font-size:14px;color:var(--text-muted);line-height:1.6;transition:color .3s;}
 
 /* ── CTA Block ── */
 .cta-block{
-  background:var(--teal);
-  padding:3rem;
+  background:var(--bg-proof);
+  padding:clamp(1.75rem,3.5vw,2.75rem);
   border-radius:14px;
   position:relative;
   overflow:hidden;
-  display:grid;
-  grid-template-columns:1fr auto;
+  display:flex;
   align-items:center;
-  gap:2.5rem;
-}
-@media(max-width:720px){
-  .cta-block{grid-template-columns:1fr;gap:1.5rem;padding:2rem;}
+  gap:2rem;
+  flex-wrap:wrap;
 }
 .cta-block::before{
   content:'';
@@ -419,10 +385,15 @@ a{color:inherit;text-decoration:none;}
   background:rgba(255,255,255,0.04);
   pointer-events:none;
 }
-.cta-copy{position:relative;z-index:1;}
+.cta-copy{
+  position:relative;z-index:1;
+  flex:1 1 340px;
+  min-width:0;
+  max-width:560px;
+}
 .cta-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:.6rem;}
 .cta-headline{font-size:clamp(22px,3.5vw,30px);font-weight:800;color:#ffffff;letter-spacing:-0.025em;line-height:1.2;margin-bottom:.6rem;}
-.cta-sub{font-size:14px;color:rgba(255,255,255,0.78);line-height:1.6;max-width:460px;margin-bottom:1rem;}
+.cta-sub{font-size:14px;color:rgba(255,255,255,0.78);line-height:1.6;margin-bottom:1rem;}
 .cta-trust{
   display:flex;flex-wrap:wrap;gap:.4rem .9rem;
   font-size:12px;
@@ -483,7 +454,9 @@ a{color:inherit;text-decoration:none;}
   letter-spacing:.04em;
   transition:color .3s;
 }
-.footer-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+.footer-links{
+  display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;
+}
 .footer-links a{
   font-size:13px;
   color:var(--text-muted);
@@ -491,53 +464,44 @@ a{color:inherit;text-decoration:none;}
   transition:color .15s;
 }
 .footer-links a:hover{color:var(--text-h);}
-.footer-links a.footer-cta-link{
-  background:var(--teal);
-  color:#fff;
-  padding:.45rem 1rem;
-  border-radius:6px;
-  font-weight:600;
-  font-size:13px;
-  transition:background .15s ease;
-}
-.footer-links a.footer-cta-link:hover{
-  background:var(--cta-hover);
-  color:#fff;
-}
-.footer-tagline{
-  font-size:13px;
-  color:var(--text-muted);
+.footer-links .dot{color:var(--footer-dot);transition:color .3s;}
+.footer-values{
+  font-size:13px;color:var(--text-muted);
+  display:flex;gap:.5rem;flex-wrap:wrap;
   transition:color .3s;
 }
+.footer-values .dot{color:var(--footer-dot);transition:color .3s;}
 .footer-copy{
-  font-size:12px;
-  color:var(--text-subtle);
-  transition:color .3s;
-  white-space:nowrap;
+  font-size:12px;color:var(--text-subtle);
+  white-space:nowrap;transition:color .3s;
 }
 
-/* ── Responsive ── */
+/* ── Tablet (between 720 and 1080) ── */
+@media(max-width:960px){
+  .nav-links{gap:1.1rem;}
+  .nav-links a{font-size:12px;}
+}
+
+/* ── Responsive — mobile ── */
 @media(max-width:720px){
-  .container{padding:0 1.25rem;}
-  .hero{padding:3.5rem 0 3rem;}
-  .hero-h1{font-size:clamp(28px,8vw,40px);}
-  .hero-sub{font-size:16px;}
   .hero-proof{padding:1rem 1.1rem;gap:1rem;}
-  .section{padding:3rem 0;}
-  .problem-grid{grid-template-columns:1fr;}
-  .build-grid{grid-template-columns:1fr;}
-  .case-block{padding:1.75rem;}
-  .case-stats{gap:1.5rem;}
-  .case-name{font-size:22px;}
+  .proof-badge{width:38px;height:38px;border-radius:9px;}
+  .proof-badge svg{width:17px;height:17px;}
+  .case-stats{gap:1.25rem 1.5rem;}
+  .stat-num{font-size:26px;}
+  .process-item{grid-template-columns:56px 1fr;gap:1.1rem;padding:1.5rem 0;}
+  .process-num{font-size:32px;}
+  .cta-block{flex-direction:column;align-items:flex-start;gap:1.5rem;}
+  .cta-action{width:100%;}
+  .cta-btn{width:100%;text-align:center;}
   .footer-top,.footer-bottom{flex-direction:column;align-items:flex-start;}
-  .footer-links{justify-content:flex-start;}
   .nav-right .toggle-wrap .toggle-label{display:none;}
   .nav-links{display:none;}
 }
 @media(max-width:440px){
-  .hero-h1{font-size:26px;}
-  .btn-cta,.btn-ghost{font-size:12px;padding:.5rem .9rem;}
-  .nav-right .btn-cta{display:none;}
+  .btn-cta{font-size:12px;padding:.5rem .9rem;}
+  .nav-right{gap:.85rem;}
+  .hero-actions .btn-cta{width:100%;text-align:center;}
 }
 </style>
 </head>
@@ -558,7 +522,6 @@ a{color:inherit;text-decoration:none;}
     </a>
     <div class="nav-links" role="navigation" aria-label="Page sections">
       <a href="#problem">The problem</a>
-      <a href="#build">What I build</a>
       <a href="#proof">Proof</a>
       <a href="#process">Process</a>
       <a href="#cta">Get in touch</a>
@@ -581,8 +544,7 @@ a{color:inherit;text-decoration:none;}
       AI systems that work while you don't
     </div>
     <h1 class="hero-h1">
-      You're paying people<br>
-      to do things <span class="accent">machines should be doing.</span>
+      You're paying people to do things <span class="accent">machines should be doing.</span>
     </h1>
     <p class="hero-sub">
       The copy-pasting, the chasing, the re-entering data into five systems.
@@ -591,12 +553,10 @@ a{color:inherit;text-decoration:none;}
     </p>
     <div class="hero-actions">
       <a class="btn-cta" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a 15-min call</a>
-      <a class="btn-ghost" href="https://discord.gg/tradersnewsbox" target="_blank" rel="noopener">See Traders Newsbox live ↗</a>
     </div>
 
     <div class="hero-proof">
       <div class="proof-badge">
-        <!-- lightning bolt -->
         <svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg>
       </div>
       <div class="proof-copy">
@@ -627,39 +587,6 @@ a{color:inherit;text-decoration:none;}
         <div class="problem-num">03</div>
         <div class="problem-title">Systems that don't talk</div>
         <div class="problem-body">The same information lives in three places, entered by three different people. Errors creep in. Stuff falls through the cracks.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- What I build -->
-<section class="section" id="build">
-  <div class="container">
-    <div class="section-label">What it actually looks like</div>
-    <div class="build-grid">
-      <div class="build-card">
-        <div class="build-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
-        </div>
-        <div class="build-title">An inbox that triages itself</div>
-        <div class="build-body">Sorts incoming emails by urgency, drafts the standard replies, and flags only the ones that actually need a human. Runs the moment a message lands.</div>
-        <div class="build-tag">Replaces hours of inbox triage</div>
-      </div>
-      <div class="build-card">
-        <div class="build-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><polyline points="7 14 11 10 15 13 21 6"/></svg>
-        </div>
-        <div class="build-title">A reporting engine you don't run</div>
-        <div class="build-body">Pulls live numbers from the tools you already use, formatted the way you want them, in your inbox before standup. Every day. No one touching it.</div>
-        <div class="build-tag">Replaces manual reporting</div>
-      </div>
-      <div class="build-card">
-        <div class="build-icon">
-          <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg>
-        </div>
-        <div class="build-title">A bridge between systems that won't talk</div>
-        <div class="build-body">Watches one system for changes, keeps the others in sync, and flags anything that doesn't match. Quietly, in the background, without anyone re-typing.</div>
-        <div class="build-tag">Replaces re-entering data</div>
       </div>
     </div>
   </div>
@@ -771,14 +698,17 @@ a{color:inherit;text-decoration:none;}
         <div class="footer-brand-name">NEXTBLOCK LABS</div>
       </div>
       <div class="footer-links">
-        <a href="https://linkedin.com/in/shaziqbal" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a>
-        <a class="footer-cta-link" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a call</a>
+        <span class="dot">·</span>
+        <a href="https://linkedin.com/in/shaziqbal" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-tagline">AI systems that work while you don't.</div>
-      <div class="footer-copy">© 2026 Nextblock Labs · Shaz Iqbal</div>
+      <div class="footer-values">
+        <span>Custom AI systems</span><span class="dot">·</span>
+        <span>Yours to keep</span>
+      </div>
+      <div class="footer-copy">© 2026 Nextblock Labs</div>
     </div>
   </div>
 </footer>
@@ -796,19 +726,16 @@ a{color:inherit;text-decoration:none;}
     try{ localStorage.setItem('nbl-theme', t); }catch(e){}
   }
 
-  // Load saved preference
   try{
     var saved = localStorage.getItem('nbl-theme');
     if(saved === 'dark' || saved === 'light') applyTheme(saved);
   }catch(e){}
 
-  // Toggle click
   toggle.addEventListener('click', function(){
     var current = html.getAttribute('data-theme');
     applyTheme(current === 'dark' ? 'light' : 'dark');
   });
 
-  // Keyboard support
   toggle.addEventListener('keydown', function(e){
     if(e.key === 'Enter' || e.key === ' '){
       e.preventDefault();
