@@ -184,7 +184,26 @@ a{color:inherit;text-decoration:none;}
   display:flex;align-items:center;justify-content:center;
 }
 .proof-badge svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block;}
-.proof-eyebrow{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-subtle);margin-bottom:.25rem;}
+.proof-eyebrow{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-subtle);margin-bottom:.3rem;
+}
+.proof-eyebrow .live-dot{
+  background:var(--teal);
+  box-shadow:0 0 0 3px rgba(78,195,185,0.18);
+}
+.proof-badge{
+  position:relative;
+}
+.proof-badge::after{
+  content:'';
+  position:absolute;top:-3px;right:-3px;
+  width:10px;height:10px;border-radius:50%;
+  background:#4ade80;
+  border:2px solid var(--bg-off);
+  animation:blink 2s ease-in-out infinite;
+}
 .proof-headline{font-size:14px;font-weight:600;color:var(--text-h);margin-bottom:.2rem;}
 .proof-detail{font-size:13px;color:var(--text-muted);line-height:1.5;}
 
@@ -526,7 +545,7 @@ a{color:inherit;text-decoration:none;}
       AI systems that work while you don't
     </div>
     <h1 class="hero-h1">
-      You're paying people to do things <span class="accent">machines could be doing.</span>
+      Stop paying people for work <span class="accent">machines can do.</span>
     </h1>
     <p class="hero-sub">
       The copy-pasting, the chasing, the re-entering data into five systems.
@@ -542,7 +561,7 @@ a{color:inherit;text-decoration:none;}
         <svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg>
       </div>
       <div class="proof-copy">
-        <div class="proof-eyebrow">Live system</div>
+        <div class="proof-eyebrow"><span class="live-dot"></span>Live system</div>
         <div class="proof-headline">Traders Newsbox is running right now</div>
         <div class="proof-detail">100+ sources monitored · posts in under 1 second · zero human involvement · 24/7</div>
       </div>
