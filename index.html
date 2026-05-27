@@ -95,6 +95,11 @@ a{color:inherit;text-decoration:none;}
 .nav-links{display:flex;align-items:center;gap:1.5rem;}
 .nav-links a{font-size:13px;font-weight:500;color:var(--text-muted);text-decoration:none;letter-spacing:.01em;transition:color .15s;}
 .nav-links a:hover{color:var(--text-h);}
+.nav-links a.nav-cta-pointer{
+  display:inline-flex;align-items:center;gap:.35rem;
+  color:var(--teal);
+}
+.nav-links a.nav-cta-pointer:hover{color:var(--teal-light);}
 
 /* Nav right */
 .nav-right{display:flex;align-items:center;gap:1.1rem;flex-shrink:0;}
@@ -189,8 +194,8 @@ a{color:inherit;text-decoration:none;}
   border-bottom:1px solid var(--border);
 }
 .section-label{
-  font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--text-subtle);margin-bottom:2.5rem;
+  font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-muted);margin-bottom:2.5rem;
 }
 
 /* ── Problem cards ── */
@@ -294,7 +299,7 @@ a{color:inherit;text-decoration:none;}
   position:relative;
   overflow:hidden;
   display:grid;
-  grid-template-columns:1fr auto;
+  grid-template-columns:minmax(0,540px) 1fr;
   grid-template-areas:
     "scarcity action"
     "label    action"
@@ -337,21 +342,21 @@ a{color:inherit;text-decoration:none;}
   position:relative;z-index:1;
   font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:rgba(255,255,255,0.6);
-  max-width:560px;
+  max-width:540px;
 }
 .cta-headline{
   grid-area:headline;
   position:relative;z-index:1;
   font-size:clamp(22px,3.5vw,30px);font-weight:800;
   color:#ffffff;letter-spacing:-0.025em;line-height:1.2;
-  max-width:560px;
+  max-width:540px;
   margin-top:.3rem;
 }
 .cta-sub{
   grid-area:sub;
   position:relative;z-index:1;
   font-size:14px;color:rgba(255,255,255,0.78);line-height:1.6;
-  max-width:560px;
+  max-width:540px;
   margin-top:.6rem;
 }
 .cta-trust{
@@ -379,7 +384,6 @@ a{color:inherit;text-decoration:none;}
   display:flex;
   align-items:center;
   justify-content:center;
-  min-width:200px;
 }
 .cta-btn{
   display:inline-block;
@@ -504,9 +508,9 @@ a{color:inherit;text-decoration:none;}
     </a>
     <div class="nav-links" role="navigation" aria-label="Page sections">
       <a href="#problem">The problem</a>
-      <a href="#proof">Proof</a>
-      <a href="#process">Process</a>
-      <a href="#cta">Get in touch</a>
+      <a href="#proof">The Proof</a>
+      <a href="#process">The Process</a>
+      <a href="#cta" class="nav-cta-pointer">Get in touch →</a>
     </div>
     <div class="nav-right">
       <a class="btn-cta" href="https://outlook.office.com/bookwithme/user/362039b362cd4171907df7353ccb8cc4@nextblocklabs.com/meetingtype/6UZNq-wsJESu0nCvYopdJQ2?anonymous&ismsaljsauthenabled&ep=mcard">Book a call</a>
@@ -522,7 +526,7 @@ a{color:inherit;text-decoration:none;}
       AI systems that work while you don't
     </div>
     <h1 class="hero-h1">
-      You're paying people to do things <span class="accent">machines should be doing.</span>
+      You're paying people to do things <span class="accent">machines could be doing.</span>
     </h1>
     <p class="hero-sub">
       The copy-pasting, the chasing, the re-entering data into five systems.
