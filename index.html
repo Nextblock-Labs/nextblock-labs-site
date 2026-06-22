@@ -129,6 +129,8 @@ a{color:inherit;text-decoration:none;}
 .lang-switch a:hover{color:var(--text-h);}
 .lang-switch a.active{color:var(--teal);cursor:default;}
 .lang-switch .sep{color:var(--text-subtle);}
+.btn-cta .cta-short{display:none;}
+@media(max-width:720px){.btn-cta .cta-long{display:none;}.btn-cta .cta-short{display:inline;}}
 
 /* ── Hero ── */
 .hero{
@@ -566,7 +568,7 @@ a{color:inherit;text-decoration:none;}
       <div class="lang-switch" role="navigation" aria-label="Language">
         <a href="/" class="active" aria-current="true">EN</a><span class="sep">/</span><a href="/hu/">HU</a>
       </div>
-      <a class="btn-cta" href="https://outlook.office.com/book/NextblockLabs@nextblocklabs.com/">Book a 15-min call</a>
+      <a class="btn-cta" href="https://outlook.office.com/book/NextblockLabs@nextblocklabs.com/"><span class="cta-long">Book a 15-min call</span><span class="cta-short">Book a call</span></a>
     </div>
   </div>
 </nav>
