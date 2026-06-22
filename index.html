@@ -443,11 +443,10 @@ a{color:inherit;text-decoration:none;}
 .footer-brand-mark span{width:13px;height:13px;border-radius:3px;display:block;}
 .footer-brand-mark .a,.footer-brand-mark .c,.footer-brand-mark .d{background:#0c7878;}
 .footer-brand-mark .b{background:#4ec3b9;}
-.footer-brand-name{
-  font-size:16px;font-weight:700;
-  color:var(--text-h);
-  letter-spacing:.04em;
-}
+.footer-wordmark{display:flex;flex-direction:column;line-height:1;}
+.footer-logo-top{font-size:16px;font-weight:700;letter-spacing:.06em;color:var(--text-h);}
+.footer-logo-top span{font-weight:300;}
+.footer-logo-bottom{font-size:10px;font-weight:500;letter-spacing:.3em;color:var(--text-muted);margin-top:3px;}
 .footer-links{
   display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;
 }
@@ -721,7 +720,10 @@ a{color:inherit;text-decoration:none;}
           <span class="a"></span><span class="b"></span>
           <span class="c"></span><span class="d"></span>
         </div>
-        <div class="footer-brand-name">NEXTBLOCK LABS</div>
+        <div class="footer-wordmark">
+          <span class="footer-logo-top">NEXT<span>BLOCK</span></span>
+          <span class="footer-logo-bottom">LABS</span>
+        </div>
       </div>
       <div class="footer-links">
         <a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a>
