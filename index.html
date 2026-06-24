@@ -11,6 +11,9 @@
 <meta property="og:url" content="https://nextblocklabs.com">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#0e0e0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="alternate" hreflang="en" href="https://nextblocklabs.com/">
 <link rel="alternate" hreflang="hu" href="https://nextblocklabs.com/hu/">
 <link rel="alternate" hreflang="x-default" href="https://nextblocklabs.com/">
@@ -59,7 +62,7 @@ html{scroll-behavior:smooth;}
 
 /* ── Base ── */
 body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
   background:var(--bg);
   color:var(--text-body);
   line-height:1.6;
@@ -85,18 +88,20 @@ a{color:inherit;text-decoration:none;}
 
 /* Logo */
 .logo{display:inline-flex;align-items:center;gap:.85rem;text-decoration:none;flex-shrink:0;}
+.logo-img{height:34px;width:auto;display:block;}
+.footer-logo-img{height:30px;width:auto;display:block;}
 .logo-mark{display:grid;grid-template-columns:1fr 1fr;gap:3px;width:32px;flex-shrink:0;}
 .logo-mark span{width:14px;height:14px;border-radius:3px;display:block;}
 .sq-a,.sq-c,.sq-d{background:#0c7878;}
 .sq-b{background:#4ec3b9;}
 .logo-wordmark{display:flex;flex-direction:column;line-height:1;}
 .logo-top{font-size:15px;font-weight:700;letter-spacing:.06em;color:var(--logo-text);}
-.logo-top span{font-weight:300;}
+.logo-top span{font-weight:400;}
 .logo-bottom{font-size:10px;font-weight:500;letter-spacing:.3em;color:var(--text-muted);margin-top:2px;}
 
 /* Nav links */
 .nav-links{display:flex;align-items:center;gap:1.5rem;}
-.nav-links a{font-size:13px;font-weight:500;color:var(--text-muted);text-decoration:none;letter-spacing:.01em;transition:color .15s;}
+.nav-links a{font-size:12px;font-weight:600;color:var(--text-muted);text-decoration:none;text-transform:uppercase;letter-spacing:.1em;transition:color .15s;}
 .nav-links a:hover{color:var(--text-h);}
 .nav-links a.nav-cta-pointer{
   display:inline-flex;align-items:center;gap:.35rem;
@@ -134,7 +139,7 @@ a{color:inherit;text-decoration:none;}
 
 /* ── Hero ── */
 .hero{
-  padding:clamp(2.5rem,5vw,4rem) 0 clamp(2rem,4vw,3.5rem);
+  padding:clamp(4.5rem,8vw,7rem) 0 clamp(3rem,5vw,4.5rem);
   border-bottom:1px solid var(--border);
   position:relative;
   overflow:hidden;
@@ -171,7 +176,7 @@ a{color:inherit;text-decoration:none;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
 
 .hero-h1{
-  font-size:clamp(30px,5.2vw,52px);
+  font-size:clamp(36px,6vw,64px);
   font-weight:800;
   color:var(--text-h);
   line-height:1.1;
@@ -248,6 +253,11 @@ a{color:inherit;text-decoration:none;}
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:1.25rem;
 }
+.build-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1.25rem;
+}
 .problem-card{
   background:var(--bg-card);
   border:1px solid var(--border);
@@ -322,6 +332,13 @@ a{color:inherit;text-decoration:none;}
   max-width:680px;
   margin:0 auto;
 }
+.case-link{
+  display:inline-block;margin-top:1.4rem;
+  color:#fff;font-weight:700;font-size:14px;text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,0.45);padding-bottom:2px;
+  transition:border-color .15s;
+}
+.case-link:hover{border-color:#fff;}
 
 /* ── Process ── */
 .process-list{display:flex;flex-direction:column;gap:0;}
@@ -343,6 +360,13 @@ a{color:inherit;text-decoration:none;}
 }
 .process-title{font-size:16px;font-weight:700;color:var(--text-h);margin-bottom:.35rem;}
 .process-body{font-size:15px;color:var(--text-body);line-height:1.6;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;}
+.faq-item{padding:1.5rem 0;border-bottom:1px solid var(--border);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{font-size:16px;font-weight:700;color:var(--text-h);margin-bottom:.5rem;}
+.faq-a{font-size:15px;color:var(--text-body);line-height:1.65;}
 
 /* ── CTA Block (centred) ── */
 .cta-block{
@@ -457,7 +481,7 @@ a{color:inherit;text-decoration:none;}
 .footer-brand-mark .b{background:#4ec3b9;}
 .footer-wordmark{display:flex;flex-direction:column;line-height:1;}
 .footer-logo-top{font-size:16px;font-weight:700;letter-spacing:.06em;color:var(--text-h);}
-.footer-logo-top span{font-weight:300;}
+.footer-logo-top span{font-weight:400;}
 .footer-logo-bottom{font-size:10px;font-weight:500;letter-spacing:.3em;color:var(--text-muted);margin-top:3px;}
 .footer-links{
   display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;
@@ -549,26 +573,18 @@ a{color:inherit;text-decoration:none;}
 <nav class="nav">
   <div class="container nav-inner">
     <a class="logo" href="/" aria-label="Nextblock Labs">
-      <div class="logo-mark">
-        <span class="sq-a"></span><span class="sq-b"></span>
-        <span class="sq-c"></span><span class="sq-d"></span>
-      </div>
-      <div class="logo-wordmark">
-        <span class="logo-top">NEXT<span>BLOCK</span></span>
-        <span class="logo-bottom">LABS</span>
-      </div>
+      <img src="logo.svg" alt="Nextblock Labs" class="logo-img" width="150" height="34">
     </a>
     <div class="nav-links" role="navigation" aria-label="Page sections">
-      <a href="#problem">The problem</a>
-      <a href="#proof">The Proof</a>
-      <a href="#process">The Process</a>
-      <a href="#cta" class="nav-cta-pointer">Get in touch →</a>
+      <a href="#build">What we build</a>
+      <a href="#proof">Proof</a>
+      <a href="#faq">FAQ</a>
     </div>
     <div class="nav-right">
       <div class="lang-switch" role="navigation" aria-label="Language">
         <a href="/" class="active" aria-current="true">EN</a><span class="sep">/</span><a href="/hu/">HU</a>
       </div>
-      <a class="btn-cta" href="https://outlook.office.com/book/NextblockLabs@nextblocklabs.com/"><span class="cta-long">Book a 15-min call</span><span class="cta-short">Book a call</span></a>
+      <a class="btn-cta" href="https://outlook.office.com/book/NextblockLabs@nextblocklabs.com/">Book a call</a>
     </div>
   </div>
 </nav>
@@ -629,6 +645,54 @@ a{color:inherit;text-decoration:none;}
   </div>
 </section>
 
+<!-- What we build -->
+<section class="section" id="build">
+  <div class="container">
+    <div class="section-label">What we build</div>
+    <div class="build-grid">
+      <div class="problem-card">
+        <div class="problem-title">Automate the manual work</div>
+        <div class="problem-body">The copy-pasting, the data re-entry, the chasing. We hand it to a system that does it the same way every time — no slips, no overtime.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-title">Real-time alerts &amp; monitoring</div>
+        <div class="problem-body">Watch the things that matter — prices, news, stock, orders — and get the alert the second something moves. Exactly what Traders Newsbox does, live.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-title">Dashboards &amp; reporting</div>
+        <div class="problem-body">The numbers you need, refreshed on their own, in one place. Stop waiting days for a report that's already stale by the time it lands.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-title">Connect your systems</div>
+        <div class="problem-body">Make the tools you already pay for talk to each other, so the same information isn't entered three times in three places.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-title">Document &amp; data processing</div>
+        <div class="problem-body">Pull the detail out of emails, PDFs, forms and invoices automatically — sorted, checked, and dropped where it needs to go.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-title">Custom internal tools</div>
+        <div class="problem-body">A small, purpose-built tool for the one awkward thing your business does over and over — done exactly the way you do it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Specialism: battery & automotive supply chain -->
+<section class="section" id="supply-chain">
+  <div class="container">
+    <div class="section-label">A specialism — battery &amp; automotive</div>
+    <div class="case-block">
+      <div class="case-inner">
+        <div class="case-tag">For suppliers in Hungary</div>
+        <div class="case-name">Win a place in the supply chain</div>
+        <p class="case-desc">Hungary's battery and automotive boom is opening real doors for local businesses — but to supply a global manufacturer, your systems have to speak theirs: data exchange, traceability, quality reporting, integration. We harmonise the technology you already run so it connects cleanly to foreign partners — so you meet the requirements and win the work.</p>
+        <a class="case-link" href="https://outlook.office.com/book/NextblockLabs@nextblocklabs.com/">Talk to us about your supply chain →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Proof / Case study (centred) -->
 <section class="section" id="proof">
   <div class="container">
@@ -657,8 +721,9 @@ a{color:inherit;text-decoration:none;}
           </div>
         </div>
         <div class="case-quote">
-          Built solo. Run solo. No dev team, no agency. Just the system, quietly doing the job — the same approach we'll bring to yours.
+          No agency overhead, no bloated dev team — just focused builds that quietly do the job. The same approach works whether you're a one-person operation or a mid-sized company.
         </div>
+        <a class="case-link" href="https://tradersnewsbox.com/" target="_blank" rel="noopener">See it live → tradersnewsbox.com</a>
       </div>
     </div>
   </div>
@@ -701,6 +766,60 @@ a{color:inherit;text-decoration:none;}
   </div>
 </section>
 
+<!-- What you get + pricing -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-label">What you get</div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-title">A fixed price, agreed first</div>
+        <div class="problem-body">Most builds land between £1,500 and £8,000. You get the number before anything starts — no meter running, no surprise invoice.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-title">Built in weeks, not months</div>
+        <div class="problem-body">Tight scope, one operator plus AI. You see working versions as they're ready, not after a long silence.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-title">Yours to keep</div>
+        <div class="problem-body">The system, the code and the docs are all yours at handover — with 30 days of bug-fix support after. No retainer, no lock-in.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label">Straight answers</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Do I need to be technical?</div>
+        <div class="faq-a">No. You bring the knowledge of your business; we handle every technical part and hand you something that just works.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does it cost?</div>
+        <div class="faq-a">Most builds are £1,500–£8,000, fixed and agreed before we start. The discovery call sets the scope, and the scope sets the price.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long does it take?</div>
+        <div class="faq-a">Usually weeks. We keep scope tight on purpose — a focused system that ships beats a sprawling one that never does.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if it breaks?</div>
+        <div class="faq-a">Bug fixes are included for 30 days after handover. After that you own it outright and it runs on its own; we're available per-job if you ever want changes.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my data safe?</div>
+        <div class="faq-a">Your data stays yours. We build around your systems, access only what the job needs, and hand everything over — there's nothing locked in our hands.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if it's not a fit?</div>
+        <div class="faq-a">We'll tell you. The 15-minute call is an honest read on whether AI makes sense for you — if it doesn't, we'll say so. No pitch.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA (centred) -->
 <section class="section" id="cta" style="border-bottom:none;">
   <div class="container">
@@ -731,14 +850,7 @@ a{color:inherit;text-decoration:none;}
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand-row">
-        <div class="footer-brand-mark" aria-hidden="true">
-          <span class="a"></span><span class="b"></span>
-          <span class="c"></span><span class="d"></span>
-        </div>
-        <div class="footer-wordmark">
-          <span class="footer-logo-top">NEXT<span>BLOCK</span></span>
-          <span class="footer-logo-bottom">LABS</span>
-        </div>
+        <img src="logo.svg" alt="Nextblock Labs" class="footer-logo-img" width="140" height="30">
       </div>
       <div class="footer-links">
         <a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a>
