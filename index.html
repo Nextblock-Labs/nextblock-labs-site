@@ -256,8 +256,17 @@ a{color:inherit;text-decoration:none;}
 .build-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:1.25rem;
+  gap:1.9rem 2.5rem;
 }
+.build-item{border-top:2px solid var(--teal);padding-top:1rem;}
+.build-item .bt{font-size:16px;font-weight:700;color:var(--text-h);margin-bottom:.4rem;line-height:1.3;}
+.build-item .bb{font-size:14px;color:var(--text-body);line-height:1.6;}
+.feature{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:0 12px 12px 0;padding:clamp(1.75rem,3.5vw,2.5rem);}
+.feature-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.7rem;}
+.feature-title{font-size:clamp(20px,3vw,26px);font-weight:800;color:var(--text-h);letter-spacing:-0.02em;line-height:1.15;margin-bottom:.7rem;}
+.feature-body{font-size:15px;color:var(--text-body);line-height:1.65;max-width:760px;margin-bottom:1.2rem;}
+.feature-link{display:inline-block;color:var(--teal);font-weight:700;font-size:14px;text-decoration:none;border-bottom:1px solid rgba(78,195,185,0.4);padding-bottom:2px;}
+.feature-link:hover{border-color:var(--teal);}
 .problem-card{
   background:var(--bg-card);
   border:1px solid var(--border);
@@ -597,7 +606,7 @@ a{color:inherit;text-decoration:none;}
       2-3 builds open this quarter
     </div>
     <h1 class="hero-h1">
-      Stop paying people for work <span class="accent">machines can do.</span>
+      Stop paying for work <span class="accent">a machine could do.</span>
     </h1>
     <p class="hero-sub">
       The copy-pasting. The chasing. The re-entering data into five systems.<br>
@@ -650,29 +659,29 @@ a{color:inherit;text-decoration:none;}
   <div class="container">
     <div class="section-label">What we build</div>
     <div class="build-grid">
-      <div class="problem-card">
-        <div class="problem-title">Automate the manual work</div>
-        <div class="problem-body">The copy-pasting, the data re-entry, the chasing. We hand it to a system that does it the same way every time — no slips, no overtime.</div>
+      <div class="build-item">
+        <div class="bt">Automate the manual work</div>
+        <div class="bb">The copy-pasting, the data re-entry, the chasing — handed to a system that does it the same way every time.</div>
       </div>
-      <div class="problem-card">
-        <div class="problem-title">Real-time alerts &amp; monitoring</div>
-        <div class="problem-body">Watch the things that matter — prices, news, stock, orders — and get the alert the second something moves. Exactly what Traders Newsbox does, live.</div>
+      <div class="build-item">
+        <div class="bt">Real-time alerts &amp; monitoring</div>
+        <div class="bb">Watch what matters — prices, news, stock, orders — and get the alert the second it moves. Exactly what Traders Newsbox does.</div>
       </div>
-      <div class="problem-card">
-        <div class="problem-title">Dashboards &amp; reporting</div>
-        <div class="problem-body">The numbers you need, refreshed on their own, in one place. Stop waiting days for a report that's already stale by the time it lands.</div>
+      <div class="build-item">
+        <div class="bt">Dashboards &amp; reporting</div>
+        <div class="bb">The numbers you need, refreshed on their own, in one place — no more waiting days for a stale report.</div>
       </div>
-      <div class="problem-card">
-        <div class="problem-title">Connect your systems</div>
-        <div class="problem-body">Make the tools you already pay for talk to each other, so the same information isn't entered three times in three places.</div>
+      <div class="build-item">
+        <div class="bt">Connect your systems</div>
+        <div class="bb">Make the tools you already pay for talk to each other, so the same data isn't entered three times.</div>
       </div>
-      <div class="problem-card">
-        <div class="problem-title">Document &amp; data processing</div>
-        <div class="problem-body">Pull the detail out of emails, PDFs, forms and invoices automatically — sorted, checked, and dropped where it needs to go.</div>
+      <div class="build-item">
+        <div class="bt">Document &amp; data processing</div>
+        <div class="bb">Pull detail out of emails, PDFs, forms and invoices automatically — sorted, checked, routed.</div>
       </div>
-      <div class="problem-card">
-        <div class="problem-title">Custom internal tools</div>
-        <div class="problem-body">A small, purpose-built tool for the one awkward thing your business does over and over — done exactly the way you do it.</div>
+      <div class="build-item">
+        <div class="bt">Custom internal tools</div>
+        <div class="bb">A small, purpose-built tool for the one awkward thing you do over and over.</div>
       </div>
     </div>
   </div>
@@ -682,13 +691,11 @@ a{color:inherit;text-decoration:none;}
 <section class="section" id="supply-chain">
   <div class="container">
     <div class="section-label">A specialism — battery &amp; automotive</div>
-    <div class="case-block">
-      <div class="case-inner">
-        <div class="case-tag">For suppliers in Hungary</div>
-        <div class="case-name">Win a place in the supply chain</div>
-        <p class="case-desc">Hungary's battery and automotive boom is opening real doors for local businesses — but to supply a global manufacturer, your systems have to speak theirs: data exchange, traceability, quality reporting, integration. We harmonise the technology you already run so it connects cleanly to foreign partners — so you meet the requirements and win the work.</p>
-        <a class="case-link" href="https://outlook.office.com/book/NextblockLabs@nextblocklabs.com/">Talk to us about your supply chain →</a>
-      </div>
+    <div class="feature">
+      <div class="feature-tag">For suppliers in Hungary</div>
+      <div class="feature-title">Win a place in the supply chain</div>
+      <p class="feature-body">Hungary's battery and automotive boom is opening real doors for local businesses — but to supply a global manufacturer, your systems have to speak theirs: data exchange, traceability, quality reporting, integration. We harmonise the technology you already run so it connects cleanly to foreign partners — so you meet the requirements and win the work.</p>
+      <a class="feature-link" href="https://outlook.office.com/book/NextblockLabs@nextblocklabs.com/">Talk to us about your supply chain →</a>
     </div>
   </div>
 </section>
@@ -761,27 +768,6 @@ a{color:inherit;text-decoration:none;}
           <div class="process-title">Handover — it's yours</div>
           <div class="process-body">Full handover. You own the system, the code, the documentation. Bug fixes included for 30 days after delivery; after that, it runs on its own — or we can help on a per-job basis if you need it. No retainer, no lock-in.</div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- What you get + pricing -->
-<section class="section" id="pricing">
-  <div class="container">
-    <div class="section-label">What you get</div>
-    <div class="problem-grid">
-      <div class="problem-card">
-        <div class="problem-title">A fixed price, agreed first</div>
-        <div class="problem-body">Most builds land between £1,500 and £8,000. You get the number before anything starts — no meter running, no surprise invoice.</div>
-      </div>
-      <div class="problem-card">
-        <div class="problem-title">Built in weeks, not months</div>
-        <div class="problem-body">Tight scope, one operator plus AI. You see working versions as they're ready, not after a long silence.</div>
-      </div>
-      <div class="problem-card">
-        <div class="problem-title">Yours to keep</div>
-        <div class="problem-body">The system, the code and the docs are all yours at handover — with 30 days of bug-fix support after. No retainer, no lock-in.</div>
       </div>
     </div>
   </div>
