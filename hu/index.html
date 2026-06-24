@@ -11,6 +11,10 @@
 <meta property="og:url" content="https://nextblocklabs.com/hu/">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#0e0e0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://nextblocklabs.com/hu/">
 <link rel="alternate" hreflang="en" href="https://nextblocklabs.com/">
 <link rel="alternate" hreflang="hu" href="https://nextblocklabs.com/hu/">
 <link rel="alternate" hreflang="x-default" href="https://nextblocklabs.com/">
@@ -59,7 +63,7 @@ html{scroll-behavior:smooth;}
 
 /* ── Base ── */
 body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
   background:var(--bg);
   color:var(--text-body);
   line-height:1.6;
@@ -85,18 +89,20 @@ a{color:inherit;text-decoration:none;}
 
 /* Logo */
 .logo{display:inline-flex;align-items:center;gap:.85rem;text-decoration:none;flex-shrink:0;}
+.logo-img{height:44px;width:auto;display:block;}
+.footer-logo-img{height:38px;width:auto;display:block;}
 .logo-mark{display:grid;grid-template-columns:1fr 1fr;gap:3px;width:32px;flex-shrink:0;}
 .logo-mark span{width:14px;height:14px;border-radius:3px;display:block;}
 .sq-a,.sq-c,.sq-d{background:#0c7878;}
 .sq-b{background:#4ec3b9;}
 .logo-wordmark{display:flex;flex-direction:column;line-height:1;}
 .logo-top{font-size:15px;font-weight:700;letter-spacing:.06em;color:var(--logo-text);}
-.logo-top span{font-weight:300;}
+.logo-top span{font-weight:400;}
 .logo-bottom{font-size:10px;font-weight:500;letter-spacing:.3em;color:var(--text-muted);margin-top:2px;}
 
 /* Nav links */
 .nav-links{display:flex;align-items:center;gap:1.5rem;}
-.nav-links a{font-size:13px;font-weight:500;color:var(--text-muted);text-decoration:none;letter-spacing:.01em;transition:color .15s;}
+.nav-links a{font-size:12px;font-weight:600;color:var(--text-body);text-decoration:none;text-transform:uppercase;letter-spacing:.1em;transition:color .15s;}
 .nav-links a:hover{color:var(--text-h);}
 .nav-links a.nav-cta-pointer{
   display:inline-flex;align-items:center;gap:.35rem;
@@ -134,7 +140,7 @@ a{color:inherit;text-decoration:none;}
 
 /* ── Hero ── */
 .hero{
-  padding:clamp(2.5rem,5vw,4rem) 0 clamp(2rem,4vw,3.5rem);
+  padding:clamp(4.5rem,8vw,7rem) 0 clamp(3rem,5vw,4.5rem);
   border-bottom:1px solid var(--border);
   position:relative;
   overflow:hidden;
@@ -146,6 +152,9 @@ a{color:inherit;text-decoration:none;}
   background:radial-gradient(ellipse 60% 50% at 20% 0%,rgba(78,195,185,0.06) 0%,transparent 70%);
   pointer-events:none;
 }
+.hero-graphic{position:absolute;top:50%;right:1%;transform:translateY(-50%);height:84%;max-height:540px;opacity:.15;pointer-events:none;z-index:0;}
+.hero .container{position:relative;z-index:1;}
+@media(max-width:860px){.hero-graphic{display:none;}}
 .hero-scarcity{
   display:inline-flex;align-items:center;gap:.5rem;
   font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
@@ -171,7 +180,7 @@ a{color:inherit;text-decoration:none;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
 
 .hero-h1{
-  font-size:clamp(30px,5.2vw,52px);
+  font-size:clamp(36px,6vw,64px);
   font-weight:800;
   color:var(--text-h);
   line-height:1.1;
@@ -248,6 +257,24 @@ a{color:inherit;text-decoration:none;}
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:1.25rem;
 }
+.build-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1.9rem 2.5rem;
+}
+.statement{padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid var(--border);background:var(--bg-off);text-align:center;}
+.statement-line{font-size:clamp(22px,3.2vw,34px);font-weight:700;color:var(--text-h);line-height:1.3;max-width:800px;margin:0 auto;letter-spacing:-0.01em;}
+.statement-line .accent{color:var(--teal);}
+.build-item{padding-top:.25rem;}
+.build-item .bi{width:30px;height:30px;color:var(--teal);stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:.9rem;display:block;}
+.build-item .bt{font-size:16px;font-weight:700;color:var(--text-h);margin-bottom:.4rem;line-height:1.3;}
+.build-item .bb{font-size:14px;color:var(--text-body);line-height:1.6;}
+.feature{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:0 12px 12px 0;padding:clamp(1.75rem,3.5vw,2.5rem);}
+.feature-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.7rem;}
+.feature-title{font-size:clamp(20px,3vw,26px);font-weight:800;color:var(--text-h);letter-spacing:-0.02em;line-height:1.15;margin-bottom:.7rem;}
+.feature-body{font-size:15px;color:var(--text-body);line-height:1.65;max-width:760px;margin-bottom:1.2rem;}
+.feature-link{display:inline-block;color:var(--teal);font-weight:700;font-size:14px;text-decoration:none;border-bottom:1px solid rgba(78,195,185,0.4);padding-bottom:2px;}
+.feature-link:hover{border-color:var(--teal);}
 .problem-card{
   background:var(--bg-card);
   border:1px solid var(--border);
@@ -262,6 +289,11 @@ a{color:inherit;text-decoration:none;}
 .problem-body{font-size:14px;color:var(--text-body);line-height:1.65;}
 
 /* ── Case study / Proof (centred) ── */
+.proof-slots{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.25rem;}
+.proof-slot{background:var(--bg-proof);border-radius:14px;aspect-ratio:16/10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.65rem;color:rgba(255,255,255,.72);}
+.proof-slot svg{width:30px;height:30px;fill:rgba(255,255,255,.85);}
+.proof-slot span{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+@media(max-width:680px){.proof-slots{grid-template-columns:1fr;}}
 .case-block{
   background:var(--bg-proof);
   border-radius:12px;
@@ -322,6 +354,13 @@ a{color:inherit;text-decoration:none;}
   max-width:680px;
   margin:0 auto;
 }
+.case-link{
+  display:inline-block;margin-top:1.4rem;
+  color:#fff;font-weight:700;font-size:14px;text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,0.45);padding-bottom:2px;
+  transition:border-color .15s;
+}
+.case-link:hover{border-color:#fff;}
 
 /* ── Process ── */
 .process-list{display:flex;flex-direction:column;gap:0;}
@@ -343,6 +382,13 @@ a{color:inherit;text-decoration:none;}
 }
 .process-title{font-size:16px;font-weight:700;color:var(--text-h);margin-bottom:.35rem;}
 .process-body{font-size:15px;color:var(--text-body);line-height:1.6;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;}
+.faq-item{padding:1.5rem 0;border-bottom:1px solid var(--border);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{font-size:16px;font-weight:700;color:var(--text-h);margin-bottom:.5rem;}
+.faq-a{font-size:15px;color:var(--text-body);line-height:1.65;}
 
 /* ── CTA Block (centred) ── */
 .cta-block{
@@ -457,7 +503,7 @@ a{color:inherit;text-decoration:none;}
 .footer-brand-mark .b{background:#4ec3b9;}
 .footer-wordmark{display:flex;flex-direction:column;line-height:1;}
 .footer-logo-top{font-size:16px;font-weight:700;letter-spacing:.06em;color:var(--text-h);}
-.footer-logo-top span{font-weight:300;}
+.footer-logo-top span{font-weight:400;}
 .footer-logo-bottom{font-size:10px;font-weight:500;letter-spacing:.3em;color:var(--text-muted);margin-top:3px;}
 .footer-links{
   display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;
@@ -549,26 +595,19 @@ a{color:inherit;text-decoration:none;}
 <nav class="nav">
   <div class="container nav-inner">
     <a class="logo" href="/hu/" aria-label="Nextblock Labs">
-      <div class="logo-mark">
-        <span class="sq-a"></span><span class="sq-b"></span>
-        <span class="sq-c"></span><span class="sq-d"></span>
-      </div>
-      <div class="logo-wordmark">
-        <span class="logo-top">NEXT<span>BLOCK</span></span>
-        <span class="logo-bottom">LABS</span>
-      </div>
+      <img src="logo.svg" alt="Nextblock Labs" class="logo-img" width="150" height="34">
     </a>
     <div class="nav-links" role="navigation" aria-label="Page sections">
-      <a href="#problem">A probléma</a>
+      <a href="#build">Mit építünk</a>
       <a href="#proof">A bizonyíték</a>
-      <a href="#process">A folyamat</a>
-      <a href="#cta" class="nav-cta-pointer">Kapcsolat →</a>
+      <a href="#process">Hogyan</a>
+      <a href="#faq">GYIK</a>
     </div>
     <div class="nav-right">
       <div class="lang-switch" role="navigation" aria-label="Language">
         <a href="/">EN</a><span class="sep">/</span><a href="/hu/" class="active" aria-current="true">HU</a>
       </div>
-      <a class="btn-cta" href="https://outlook.office.com/book/NextblockLabs@nextblocklabs.com/"><span class="cta-long">Foglalj egy 15 perces hívást</span><span class="cta-short">Foglalás</span></a>
+      <a class="btn-cta" href="https://outlook.office.com/book/NextblockLabs@nextblocklabs.com/">Foglalj egy hívást</a>
     </div>
   </div>
 </nav>
@@ -581,11 +620,11 @@ a{color:inherit;text-decoration:none;}
       Ebben a negyedévben 2-3 helyre van kapacitás
     </div>
     <h1 class="hero-h1">
-      Ne fizess embereknek olyan munkáért, <span class="accent">amit gépek is elvégeznek.</span>
+      Ne fizess olyan munkáért,<br><span class="accent">amit egy gép is elvégezne.</span>
     </h1>
     <p class="hero-sub">
       A folytonos másolgatás. Az utánajárás. Ugyanazok az adatok újra meg újra, öt különböző rendszerbe.<br>
-      Ezt a munkát nem embernek kellene végeznie. Egy rendszernek.<br>
+      Ehhez a munkához nem ember kell. Egy rendszer kell.<br>
       Mi megépítjük. A tiéd marad.
     </p>
     <div class="hero-actions">
@@ -622,9 +661,68 @@ a{color:inherit;text-decoration:none;}
         <div class="problem-body">Mire elkészülnek a számok, a pillanat már elszállt. A döntések megérzésből születnek, mert az adat nincs ott időben.</div>
       </div>
       <div class="problem-card">
-        <div class="problem-title">Rendszerek, amik nem beszélnek egymással</div>
-        <div class="problem-body">Ugyanaz az információ három helyen él, három különböző ember viszi be. Hibák csúsznak be. Dolgok elsikkadnak a réseken át.</div>
+        <div class="problem-title">Rendszerek, amelyek nem kommunikálnak egymással</div>
+        <div class="problem-body">Ugyanaz az információ három különböző rendszerben él, és három különböző ember kezeli. Hibák csúsznak be. Fontos feladatok pedig könnyen elvesznek a folyamatok között.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statement -->
+<section class="statement">
+  <div class="container">
+    <p class="statement-line">Az ismétlődő munka a <span class="accent" style="white-space:nowrap">rendszer dolga</span> — nem a csapatodé.</p>
+  </div>
+</section>
+
+<!-- What we build -->
+<section class="section" id="build">
+  <div class="container">
+    <div class="section-label">Mit építünk</div>
+    <div class="build-grid">
+      <div class="build-item">
+        <svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 4v5h-5"/></svg>
+        <div class="bt">Automatizáljuk a fárasztó feladatokat</div>
+        <div class="bb">A másolgatást, az adatok újbóli bevitelét, az utánajárást — átveszi egy rendszer, ami mindig ugyanúgy végzi el.</div>
+      </div>
+      <div class="build-item">
+        <svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        <div class="bt">Valós idejű riasztások &amp; figyelés</div>
+        <div class="bb">Figyeld, ami számít — árak, hírek, készlet, rendelések — és kapd meg a jelzést abban a pillanatban, amint változik. Pontosan ezt csinálja a Traders Newsbox.</div>
+      </div>
+      <div class="build-item">
+        <svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M8 17v-4"/><path d="M13 17V9"/><path d="M18 17v-8"/></svg>
+        <div class="bt">Műszerfalak &amp; jelentések</div>
+        <div class="bb">A számok, amikre szükséged van, maguktól frissülve, egy helyen — nem kell többé napokat várni egy elavult jelentésre.</div>
+      </div>
+      <div class="build-item">
+        <svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6.7 7.4 10.6 16"/><path d="M17.3 7.4 13.4 16"/><path d="M7 6h10"/></svg>
+        <div class="bt">Összekötjük a rendszereidet</div>
+        <div class="bb">Elérjük, hogy a már fizetett eszközeid beszéljenek egymással, így ugyanazt az adatot nem kell háromszor bevinni.</div>
+      </div>
+      <div class="build-item">
+        <svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
+        <div class="bt">Dokumentum- &amp; adatfeldolgozás</div>
+        <div class="bb">Automatikusan kinyerjük az adatokat e-mailekből, PDF-ekből, űrlapokból és számlákból — rendezve, ellenőrizve, a helyére irányítva.</div>
+      </div>
+      <div class="build-item">
+        <svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.1 5.1 7.2 7.2M16.8 16.8 18.9 18.9M18.9 5.1 16.8 7.2M7.2 16.8 5.1 18.9"/></svg>
+        <div class="bt">Egyedi belső eszközök</div>
+        <div class="bb">Egy kicsi, célra szabott eszköz arra az egy kényelmetlen dologra, amit újra meg újra el kell végezned.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Specialism: battery & automotive supply chain -->
+<section class="section" id="supply-chain">
+  <div class="container">
+    <div class="section-label">Egy szakterület — akkumulátor &amp; autóipar</div>
+    <div class="feature">
+      <div class="feature-tag">Magyarországi beszállítóknak</div>
+      <div class="feature-title">Szerezz helyet a beszállítói láncban</div>
+      <p class="feature-body">A magyarországi akkumulátor- és autóipari fellendülés valódi lehetőségeket nyit a helyi vállalkozások előtt — de ahhoz, hogy egy globális gyártónak beszállíthass, a rendszereidnek az ő nyelvükön kell beszélniük: adatcsere, nyomon követhetőség, minőségi jelentések, integráció. Összehangoljuk a technológiát, amit már most is használsz, hogy tisztán kapcsolódjon a külföldi partnerekhez — így megfelelsz az elvárásoknak, és megnyered a megbízást.</p>
+      <a class="feature-link" href="https://outlook.office.com/book/NextblockLabs@nextblocklabs.com/">Beszéljünk a beszállítói láncodról →</a>
     </div>
   </div>
 </section>
@@ -657,9 +755,14 @@ a{color:inherit;text-decoration:none;}
           </div>
         </div>
         <div class="case-quote">
-          Egyedül megépítve. Egyedül üzemeltetve. Nincs fejlesztőcsapat, nincs ügynökség. Csak a rendszer, ami csendben végzi a dolgát — ugyanezzel a hozzáállással építjük meg a tiédet is.
+          Nincs ügynökségi rezsi, nincs felduzzasztott fejlesztőcsapat — csak célzott rendszerek, amelyek csendben végzik a dolgukat. Ugyanez a megközelítés működik, akár egyszemélyes vállalkozás vagy, akár egy közepes méretű cég.
         </div>
+        <a class="case-link" href="https://tradersnewsbox.com/" target="_blank" rel="noopener">Nézd meg élőben → tradersnewsbox.com</a>
       </div>
+    </div>
+    <div class="proof-slots">
+      <div class="proof-slot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Élő squawk feed</span></div>
+      <div class="proof-slot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Élő squawk feed</span></div>
     </div>
   </div>
 </section>
@@ -672,22 +775,22 @@ a{color:inherit;text-decoration:none;}
       <div class="process-item">
         <div class="process-num">01</div>
         <div class="process-content">
-          <div class="process-title">Felmérés — megtaláljuk, hová tűnik az idő</div>
+          <div class="process-title">Felmérés — feltárjuk, hol vész el az idő</div>
           <div class="process-body">Egy beszélgetés. Nyíltan rákérdezünk a mindennapi működésedre, és megtaláljuk azt a három-négy dolgot, ami felemészti a csapatod idejét. A legtöbb ügyfél meglepődik, milyen nyilvánvaló a válasz, amint valaki ránéz.</div>
         </div>
       </div>
       <div class="process-item">
         <div class="process-num">02</div>
         <div class="process-content">
-          <div class="process-title">Terjedelem — megállapodunk, mi épül meg</div>
+          <div class="process-title">Tervezés — megállapodunk, mi épül meg.</div>
           <div class="process-body">Fix eredmény, fix ár, mindent leírunk, mielőtt bármi elkezdődne. Pontosan tudod, mit kapsz, és pontosan mennyibe kerül. Semmi meglepetés menet közben.</div>
         </div>
       </div>
       <div class="process-item">
         <div class="process-num">03</div>
         <div class="process-content">
-          <div class="process-title">Építés — menet közben látod</div>
-          <div class="process-body">Nem fekete doboz. Nyíltan dolgozunk, megmutatjuk a működő verziókat, ahogy elkészülnek, és módosítunk, ha valami nem stimmel. Általában hetek, nem hónapok.</div>
+          <div class="process-title">Építés — menet közben látod, ahogy készül</div>
+          <div class="process-body">Nyíltan dolgozunk. A működő verziókat már fejlesztés közben megmutatjuk, és menet közben finomítunk rajtuk. Általában hetek, nem hónapok.</div>
         </div>
       </div>
       <div class="process-item">
@@ -696,6 +799,40 @@ a{color:inherit;text-decoration:none;}
           <div class="process-title">Átadás — a tiéd</div>
           <div class="process-body">Teljes átadás. A tiéd a rendszer, a kód, a dokumentáció. A hibajavítás 30 napig benne van az átadás után; utána magától működik — vagy alkalmanként segítünk, ha szükség van rá. Nincs havidíj, nincs elköteleződés.</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label">Egyenes válaszok</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Kell hozzá műszaki tudás?</div>
+        <div class="faq-a">Nem. Te hozod a vállalkozásod ismeretét; mi kezelünk minden műszaki részt, és olyat adunk a kezedbe, ami egyszerűen működik.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Mennyibe kerül?</div>
+        <!-- TODO: localise currency (HUF/EUR) — Shaz/Anita decision -->
+        <div class="faq-a">A legtöbb projekt £1,500–£8,000, fixen és előre egyeztetve, mielőtt belekezdenénk. A felmérő hívás határozza meg a terjedelmet, a terjedelem pedig az árat.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Mennyi időbe telik?</div>
+        <div class="faq-a">Általában hetekbe. Szándékosan tartjuk szűken a terjedelmet — egy célzott rendszer, ami elkészül, többet ér, mint egy szétfolyó, ami sosem.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Mi van, ha elromlik?</div>
+        <div class="faq-a">A hibajavítás 30 napig benne van az átadás után. Utána teljes egészében a tiéd, és magától működik; alkalmanként elérhetők vagyunk, ha valaha módosítanál.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Biztonságban vannak az adataim?</div>
+        <div class="faq-a">Az adataid a tiéid maradnak. A te rendszereid köré építünk, csak ahhoz férünk hozzá, amihez a munka megkívánja, és mindent átadunk — semmi nem marad a kezünkben.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Mi van, ha mégsem illik hozzánk?</div>
+        <div class="faq-a">Megmondjuk. A 15 perces hívás egy őszinte felmérés arról, van-e értelme a mesterséges intelligenciának nálad — ha nincs, megmondjuk. Semmi rábeszélés.</div>
       </div>
     </div>
   </div>
@@ -710,7 +847,8 @@ a{color:inherit;text-decoration:none;}
         <span class="live-dot"></span>
         Jelenleg negyedévente 2-3 projektet vállalunk
       </div>
-      <div class="cta-label">A legtöbb projekt 600 000–3 300 000 Ft · Fix ár, előre egyeztetve</div>
+      <!-- TODO: localise currency (HUF/EUR) — Shaz/Anita decision -->
+      <div class="cta-label">A legtöbb projekt £1,500–£8,000 · Fix ár, előre egyeztetve</div>
       <div class="cta-headline">15 perc alatt kiderül,<br>van-e értelme bármit építeni.</div>
       <p class="cta-sub">Semmi rábeszélés, semmi erőltetés. Egy beszélgetés. Nyíltan rákérdezünk, mit csinál a csapatod — és őszintén megmondjuk, van-e értelme a mesterséges intelligenciának. Ha nincs, azt is megmondjuk.</p>
       <div class="cta-trust">
@@ -731,14 +869,7 @@ a{color:inherit;text-decoration:none;}
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand-row">
-        <div class="footer-brand-mark" aria-hidden="true">
-          <span class="a"></span><span class="b"></span>
-          <span class="c"></span><span class="d"></span>
-        </div>
-        <div class="footer-wordmark">
-          <span class="footer-logo-top">NEXT<span>BLOCK</span></span>
-          <span class="footer-logo-bottom">LABS</span>
-        </div>
+        <img src="logo.svg" alt="Nextblock Labs" class="footer-logo-img" width="140" height="30">
       </div>
       <div class="footer-links">
         <a href="mailto:shaz@nextblocklabs.com">shaz@nextblocklabs.com</a>
